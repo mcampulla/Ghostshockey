@@ -31,7 +31,7 @@ namespace ghostshockey.it.api.Models
         public bool? IsCurrent { get; set; }
 
 
-        public ICollection<Category> Cazzi { get; set; }
+        //public ICollection<Category> Cazzi { get; set; }
     }
 
     public class YearComparer : IEqualityComparer<Year>

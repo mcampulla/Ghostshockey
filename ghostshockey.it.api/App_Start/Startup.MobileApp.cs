@@ -75,10 +75,13 @@ namespace ghostshockey.it.api
         private static IEdmModel GetEdmModel()
         {
             var builder = new ODataConventionModelBuilder();
-            builder.Namespace = "AirVinyl";
-            builder.ContainerName = "AirVinylContainer";
+            builder.Namespace = "Ghostshockey";
+            builder.ContainerName = "GhostshockeyContainer";
 
             builder.EntitySet<Year>("Years");
+            builder.EntitySet<Category>("Categories");
+            builder.EntitySet<Club>("Clubs");
+            builder.EntitySet<Team>("Teams");
             //builder.EntitySet<VinylRecord>("VinylRecords");
 
             return builder.GetEdmModel();

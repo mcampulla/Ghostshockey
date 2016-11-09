@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ghostshockey.it.api", "ghostshockey.it.api\ghostshockey.it.api.csproj", "{209FA716-A7AD-4095-BD70-C8710FC66FA7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ghostshockey.it.model", "ghostshockey.it.model\ghostshockey.it.model.csproj", "{3B8BB980-3A16-4B2D-B2B2-F7765E430006}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{209FA716-A7AD-4095-BD70-C8710FC66FA7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{209FA716-A7AD-4095-BD70-C8710FC66FA7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{209FA716-A7AD-4095-BD70-C8710FC66FA7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{209FA716-A7AD-4095-BD70-C8710FC66FA7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3B8BB980-3A16-4B2D-B2B2-F7765E430006}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3B8BB980-3A16-4B2D-B2B2-F7765E430006}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3B8BB980-3A16-4B2D-B2B2-F7765E430006}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3B8BB980-3A16-4B2D-B2B2-F7765E430006}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

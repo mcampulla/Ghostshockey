@@ -202,8 +202,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\Startup.MobileApp.cs" />
-    <Compile Include="Controllers\YearController.cs" />
-    <Compile Include="Controllers\CategoryController.cs" />
+    <Compile Include="Controllers\ClubsController.cs" />
+    <Compile Include="Controllers\TeamsController.cs" />
+    <Compile Include="Controllers\YearsController.cs" />
+    <Compile Include="Controllers\CategoriesController.cs" />
+    <Compile Include="Helpers\ODataHelpers.cs" />
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\Club.cs" />
     <Compile Include="Models\GhostsDbContext.cs" />

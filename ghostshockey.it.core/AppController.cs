@@ -3,6 +3,7 @@ using AdMaiora.AppKit.Services;
 using AdMaiora.AppKit.Utils;
 using ghostshockey.it.model;
 using ghostshockey.it.model.Poco;
+using Ghostshockey;
 using RestSharp.Portable;
 using RestSharp.Portable.HttpClient;
 using System;
@@ -485,6 +486,18 @@ namespace ghostshockey.it.core
         {
             try
             {
+                var context = new GhostshockeyContainer(new Uri("http://api-ghosts.azurewebsites.net/odata"));
+
+                var years = await context.Years.ExecuteAsync();
+
+                ghostshockey.it.api.Models.Year newyear = new ghostshockey.it.api.Models.Year();
+                newyear.Year1 = "test";
+                newyear.DateStart = DateTime.Now;
+                newyear.DateEnd = DateTime.Now.AddDays(30);
+
+                context.AddToYears(newyear);
+                var r = await context.SaveChangesAsync();                 
+
                 RestClient svc = new RestClient("http://api-ghosts.azurewebsites.net/");
                 svc.IgnoreResponseStatusCode = true;
                 RestRequest req = new RestRequest("odata/Years", Method.GET);

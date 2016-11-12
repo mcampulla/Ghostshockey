@@ -139,5 +139,11 @@
       <DependentUpon>ViewController.cs</DependentUpon>
     </Compile>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ghostshockey.it.core\ghostshockey.it.core.csproj">
+      <Project>{A790AFB9-3674-4778-BE84-0E710C39A865}</Project>
+      <Name>ghostshockey.it.core</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>

@@ -54,4 +54,31 @@ namespace ghostshockey.it.api.Models
             return hCode;
         }
     }
+
+    public static class YearMapper
+    {
+        public static Year MapToModel(this model.Poco.Year dto)
+        {
+            Year model = new Year();
+            model.YearID = dto.YearID;
+            model.Year1 = dto.Name;
+            model.DateStart = dto.DateStart;
+            model.DateEnd = dto.DateEnd;
+            model.IsCurrent = dto.IsCurrent;
+
+            return model;
+        }
+
+        public static model.Poco.Year MapToDto(this Year model)
+        {
+            model.Poco.Year dto = new model.Poco.Year();
+            dto.YearID = model.YearID;
+            dto.Name = model.Year1;
+            dto.DateStart = model.DateStart;
+            dto.DateEnd = model.DateEnd;
+            dto.IsCurrent = model.IsCurrent;
+
+            return dto;
+        }
+    }
 }

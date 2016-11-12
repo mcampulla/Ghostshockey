@@ -13,7 +13,7 @@ namespace ghostshockey.it.model.Poco
         public DateTime? DateStart { get; set; }
         public DateTime? DateEnd { get; set; }
         public bool? IsCurrent { get; set; }
-        public string DisplayName { get { return Name; } }
+        //public string DisplayName { get { return Name; } }
     }
 
     public class YearComparer : IEqualityComparer<Year>

@@ -78,7 +78,7 @@ namespace ghostshockey.it.api
             builder.Namespace = "Ghostshockey";
             builder.ContainerName = "GhostshockeyContainer";
 
-            builder.EntitySet<Year>("Years");
+            builder.EntitySet<model.Poco.Year>("Years");
             builder.EntitySet<Category>("Categories");
             builder.EntitySet<Club>("Clubs");
             builder.EntitySet<Team>("Teams");

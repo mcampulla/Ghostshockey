@@ -3010,8 +3010,8 @@ namespace ghostshockey.it.Droid
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f09005d
-			public const int action0 = 2131296349;
+			// aapt resource value: 0x7f090061
+			public const int action0 = 2131296353;
 			
 			// aapt resource value: 0x7f09004d
 			public const int action_bar = 2131296333;
@@ -3037,8 +3037,8 @@ namespace ghostshockey.it.Droid
 			// aapt resource value: 0x7f09004e
 			public const int action_context_bar = 2131296334;
 			
-			// aapt resource value: 0x7f090061
-			public const int action_divider = 2131296353;
+			// aapt resource value: 0x7f090065
+			public const int action_divider = 2131296357;
 			
 			// aapt resource value: 0x7f090003
 			public const int action_menu_divider = 2131296259;
@@ -3079,14 +3079,14 @@ namespace ghostshockey.it.Droid
 			// aapt resource value: 0x7f090037
 			public const int buttonPanel = 2131296311;
 			
-			// aapt resource value: 0x7f09005e
-			public const int cancel_action = 2131296350;
+			// aapt resource value: 0x7f090062
+			public const int cancel_action = 2131296354;
 			
 			// aapt resource value: 0x7f090045
 			public const int checkbox = 2131296325;
 			
-			// aapt resource value: 0x7f090064
-			public const int chronometer = 2131296356;
+			// aapt resource value: 0x7f090068
+			public const int chronometer = 2131296360;
 			
 			// aapt resource value: 0x7f09002a
 			public const int clamp = 2131296298;
@@ -3115,14 +3115,23 @@ namespace ghostshockey.it.Droid
 			// aapt resource value: 0x7f090016
 			public const int disableHome = 2131296278;
 			
+			// aapt resource value: 0x7f09005d
+			public const int editText1 = 2131296349;
+			
+			// aapt resource value: 0x7f09005f
+			public const int editText2 = 2131296351;
+			
+			// aapt resource value: 0x7f090060
+			public const int editText3 = 2131296352;
+			
 			// aapt resource value: 0x7f09004f
 			public const int edit_query = 2131296335;
 			
 			// aapt resource value: 0x7f090023
 			public const int end = 2131296291;
 			
-			// aapt resource value: 0x7f090069
-			public const int end_padder = 2131296361;
+			// aapt resource value: 0x7f09006d
+			public const int end_padder = 2131296365;
 			
 			// aapt resource value: 0x7f090031
 			public const int expand_activities_button = 2131296305;
@@ -3148,8 +3157,8 @@ namespace ghostshockey.it.Droid
 			// aapt resource value: 0x7f090032
 			public const int image = 2131296306;
 			
-			// aapt resource value: 0x7f090068
-			public const int info = 2131296360;
+			// aapt resource value: 0x7f09006c
+			public const int info = 2131296364;
 			
 			// aapt resource value: 0x7f090000
 			public const int item_touch_helper_previous_elevation = 2131296256;
@@ -3157,11 +3166,11 @@ namespace ghostshockey.it.Droid
 			// aapt resource value: 0x7f090012
 			public const int light = 2131296274;
 			
-			// aapt resource value: 0x7f090062
-			public const int line1 = 2131296354;
-			
 			// aapt resource value: 0x7f090066
-			public const int line3 = 2131296358;
+			public const int line1 = 2131296358;
+			
+			// aapt resource value: 0x7f09006a
+			public const int line3 = 2131296362;
 			
 			// aapt resource value: 0x7f090013
 			public const int listMode = 2131296275;
@@ -3169,8 +3178,8 @@ namespace ghostshockey.it.Droid
 			// aapt resource value: 0x7f090034
 			public const int list_item = 2131296308;
 			
-			// aapt resource value: 0x7f090060
-			public const int media_actions = 2131296352;
+			// aapt resource value: 0x7f090064
+			public const int media_actions = 2131296356;
 			
 			// aapt resource value: 0x7f090024
 			public const int middle = 2131296292;
@@ -3183,6 +3192,9 @@ namespace ghostshockey.it.Droid
 			
 			// aapt resource value: 0x7f09005c
 			public const int myButton = 2131296348;
+			
+			// aapt resource value: 0x7f09005e
+			public const int myButton1 = 2131296350;
 			
 			// aapt resource value: 0x7f090028
 			public const int never = 2131296296;
@@ -3283,8 +3295,8 @@ namespace ghostshockey.it.Droid
 			// aapt resource value: 0x7f09000e
 			public const int standard = 2131296270;
 			
-			// aapt resource value: 0x7f09005f
-			public const int status_bar_latest_event_content = 2131296351;
+			// aapt resource value: 0x7f090063
+			public const int status_bar_latest_event_content = 2131296355;
 			
 			// aapt resource value: 0x7f090058
 			public const int submit_area = 2131296344;
@@ -3292,17 +3304,17 @@ namespace ghostshockey.it.Droid
 			// aapt resource value: 0x7f090015
 			public const int tabMode = 2131296277;
 			
-			// aapt resource value: 0x7f090067
-			public const int text = 2131296359;
+			// aapt resource value: 0x7f09006b
+			public const int text = 2131296363;
 			
-			// aapt resource value: 0x7f090065
-			public const int text2 = 2131296357;
+			// aapt resource value: 0x7f090069
+			public const int text2 = 2131296361;
 			
 			// aapt resource value: 0x7f090040
 			public const int textSpacerNoButtons = 2131296320;
 			
-			// aapt resource value: 0x7f090063
-			public const int time = 2131296355;
+			// aapt resource value: 0x7f090067
+			public const int time = 2131296359;
 			
 			// aapt resource value: 0x7f090036
 			public const int title = 2131296310;

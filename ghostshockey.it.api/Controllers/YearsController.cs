@@ -22,7 +22,7 @@ namespace ghostshockey.it.api.Controllers
         [EnableQuery]
         public IHttpActionResult GetYears()
         {
-            return Ok(_ctx.Years);
+            return Ok(_ctx.Years.ToList().Select(y => y.MapToDto()));
         }
 
         public IHttpActionResult GetYear([FromODataUri]int key)
@@ -30,25 +30,25 @@ namespace ghostshockey.it.api.Controllers
             var person = _ctx.Years.FirstOrDefault(p => p.YearID == key);
 
             if (person != null)
-                return Ok(person);
+                return Ok(person.MapToDto());
             else
                 return NotFound();
         }
 
-        public IHttpActionResult Post(Year model)
+        public IHttpActionResult Post(model.Poco.Year model)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
-
-            _ctx.Years.Add(model);
+            
+            _ctx.Years.Add(model.MapToModel());
             _ctx.SaveChanges();
 
             return Created(model);
         }
 
-        public IHttpActionResult Put([FromODataUri] int key, Year model)
+        public IHttpActionResult Put([FromODataUri] int key, model.Poco.Year model)
         {
             if (!ModelState.IsValid)
             {
@@ -63,13 +63,13 @@ namespace ghostshockey.it.api.Controllers
 
             model.YearID = current.YearID;
 
-            _ctx.Entry(current).CurrentValues.SetValues(model);
+            _ctx.Entry(current).CurrentValues.SetValues(model.MapToModel());
             _ctx.SaveChanges();
 
             return StatusCode(HttpStatusCode.NoContent);
         }
 
-        public IHttpActionResult Patch([FromODataUri] int key, Delta<Year> patch)
+        public IHttpActionResult Patch([FromODataUri] int key, Delta<model.Poco.Year> patch)
         {
             if (!ModelState.IsValid)
             {
@@ -82,7 +82,7 @@ namespace ghostshockey.it.api.Controllers
                 return NotFound();
             }
 
-            patch.Patch(current);
+            //patch.Patch(patch.ma);
             _ctx.SaveChanges();
 
             return StatusCode(HttpStatusCode.NoContent);

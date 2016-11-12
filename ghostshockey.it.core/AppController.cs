@@ -3,9 +3,9 @@ using AdMaiora.AppKit.Services;
 using AdMaiora.AppKit.Utils;
 using ghostshockey.it.model;
 using ghostshockey.it.model.Poco;
-using Ghostshockey;
 using RestSharp.Portable;
 using RestSharp.Portable.HttpClient;
+using Simple.OData.Client;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -84,7 +84,7 @@ namespace ghostshockey.it.core
 
         #endregion
     }
-
+    
     public static class AppController
     {
         #region Inner Classes
@@ -482,35 +482,89 @@ namespace ghostshockey.it.core
         //    }
         //}
 
+        public static async Task AddYear(string text, Action<object> success, Action<string> fail, Action<Exception> exception = null)
+        {
+            try
+            {
+                //var context = new GhostshockeyContainer(new Uri("http://api-ghosts.azurewebsites.net/odata"));
+
+                var client = new ODataClient("http://api-ghosts.azurewebsites.net/odata");
+
+                var res = await client
+                    .For<Year>()
+                    .Set(new Year() { Name = text, DateStart = DateTime.Now, DateEnd = DateTime.Now.AddDays(30), IsCurrent = true })
+                    .InsertEntryAsync();
+
+                ////var context = new GhostshockeyContainer(new Uri("http://localhost:59736/odata"));
+
+                //ghostshockey.it.api.Models.Year newyear = new ghostshockey.it.api.Models.Year();
+                //newyear.Year1 = text;
+                //newyear.DateStart = DateTime.Now;
+                //newyear.DateEnd = DateTime.Now.AddDays(30);
+                //newyear.IsCurrent = false;
+                //context.AddToYears(newyear);
+                //var res = await context.SaveChangesAsync();                 
+
+                //RestClient svc = new RestClient("http://api-ghosts.azurewebsites.net/");
+                //svc.IgnoreResponseStatusCode = true;
+                //RestRequest req = new RestRequest("odata/Years", Method.POST);
+                //req.AddJsonBody(new Year() { Name  = text, DateStart = DateTime.Now });
+                //var res = await svc.Execute<Year>(req);
+                //if (res.StatusCode == System.Net.HttpStatusCode.OK)
+                //{
+                //Poco.User user = res.Data.Content;
+                success?.Invoke(res);
+                //}
+                //else
+                //{
+                //    fail?.Invoke(res.StatusDescription);
+                //}
+
+            }
+            catch (Exception ex)
+            {
+                exception?.Invoke(ex);
+            }
+        }
+
+
+
         public static async Task GetAllYears(Action<object> success, Action<string> fail, Action<Exception> exception = null)
         {
             try
             {
-                var context = new GhostshockeyContainer(new Uri("http://api-ghosts.azurewebsites.net/odata"));
+                //var context = new GhostshockeyContainer(new Uri("http://api-ghosts.azurewebsites.net/odata"));
+                //var years = await context.Years.IncludeTotalCount().ExecuteAsync();
 
-                var years = await context.Years.ExecuteAsync();
+                //ghostshockey.it.api.Models.Year newyear = new ghostshockey.it.api.Models.Year();
+                //newyear.Year1 = "test";
+                //newyear.DateStart = DateTime.Now;
+                //newyear.DateEnd = DateTime.Now.AddDays(30);
 
-                ghostshockey.it.api.Models.Year newyear = new ghostshockey.it.api.Models.Year();
-                newyear.Year1 = "test";
-                newyear.DateStart = DateTime.Now;
-                newyear.DateEnd = DateTime.Now.AddDays(30);
+                //context.AddToYears(newyear);
+                //var r = await context.SaveChangesAsync();   
 
-                context.AddToYears(newyear);
-                var r = await context.SaveChangesAsync();                 
+                var client = new ODataClient("http://api-ghosts.azurewebsites.net/odata");
 
-                RestClient svc = new RestClient("http://api-ghosts.azurewebsites.net/");
-                svc.IgnoreResponseStatusCode = true;
-                RestRequest req = new RestRequest("odata/Years", Method.GET);
-                var res = await svc.Execute<List<Year>>(req);
-                if (res.StatusCode == System.Net.HttpStatusCode.OK)
-                {
-                    //Poco.User user = res.Data.Content;
-                    success?.Invoke(res);
-                }
-                else
-                {
-                    fail?.Invoke(res.StatusDescription);
-                }
+                var res = await client
+                    .For<Year>()
+                    .FindEntriesAsync();
+
+                success?.Invoke(res);
+
+                //RestClient svc = new RestClient("http://api-ghosts.azurewebsites.net/");
+                //svc.IgnoreResponseStatusCode = true;
+                //RestRequest req = new RestRequest("odata/Years", Method.GET);
+                //var res = await svc.Execute<IEnumerable<Year>>(req);
+                //if (res.StatusCode == System.Net.HttpStatusCode.OK)
+                //{
+                //    //Poco.User user = res.Data.Content;
+                //    success?.Invoke(res);
+                //}
+                //else
+                //{
+                //    fail?.Invoke(res.StatusDescription);
+                //}
 
             }
             catch (Exception ex)

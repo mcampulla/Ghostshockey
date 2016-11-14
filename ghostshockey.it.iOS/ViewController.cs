@@ -22,31 +22,31 @@ namespace ghostshockey.it.iOS
 				var title = string.Format ("{0} clicks!", count++);
 				Button.SetTitle (title, UIControlState.Normal);
 
-				CancellationTokenSource _cts0 = new CancellationTokenSource();
-				AppController.GetAllYears(
-					// Service call success                 
-					(data) =>
-					{
-						var s = data;
-					},
-					// Service call error
-					(error) =>
-					{
-					//if (error.Contains("confirm"))
-					//    this.VerifyButton.Visibility = ViewStates.Visible;
+                CancellationTokenSource _cts0 = new CancellationTokenSource();
+                AppController.GetAllYears(
+                    // Service call success                 
+                    (data) =>
+                    {
+                        var s = data;
+                    },
+                    // Service call error
+                    (error) =>
+                    {
+                        //if (error.Contains("confirm"))
+                        //    this.VerifyButton.Visibility = ViewStates.Visible;
 
-					//Toast.MakeText(this.Activity.Application, error, ToastLength.Long).Show();
-				},
-					// Service call finished 
-					(exception) =>
-					{
-					//    _isLogginUser = false;
+                        //Toast.MakeText(this.Activity.Application, error, ToastLength.Long).Show();
+                    },
+                    // Service call finished 
+                    (exception) =>
+                    {
+                        //    _isLogginUser = false;s
 
-					//// Allow user to tap views
-					//((MainActivity)this.Activity).UnblockUI();
-				});
+                        //// Allow user to tap views
+                        //((MainActivity)this.Activity).UnblockUI();
+                    });
 
-			};
+            };
 		}
 
 		public override void DidReceiveMemoryWarning ()

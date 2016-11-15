@@ -54,4 +54,45 @@ namespace ghostshockey.it.api.Models
 
         public virtual ICollection<Team> Teams { get; set; }
     }
+
+    public static class ClubMapper
+    {
+        public static Club MapToModel(this model.Poco.Club dto)
+        {
+            Club model = new Club();
+            model.ClubID = dto.ClubID;
+            model.Address = dto.Indirizzo;
+            model.Cap = dto.Cap;
+            model.City = dto.Citta;
+            model.Club1 = dto.Name;
+            model.Email = dto.Email;
+            model.Icon = dto.Icon;
+            model.Mobile = dto.Cellulare;
+            model.Phone = dto.Telefono;
+            model.Region = dto.Provincia;
+            model.Tag = dto.Tag;
+            //model.Type = dto.Type;
+
+            return model;
+        }
+
+        public static model.Poco.Club MapToDto(this Club model)
+        {
+            model.Poco.Club dto = new model.Poco.Club();
+            dto.ClubID = model.ClubID;
+            dto.Name = model.Club1;
+            dto.Cap = model.Cap;
+            dto.Cellulare = model.Mobile;
+            dto.Citta = model.City;
+            dto.Email = model.Email;
+            dto.Icon = model.Icon;
+            dto.Indirizzo = model.Address;
+            dto.Provincia = model.Region;
+            dto.Tag = model.Tag;
+            dto.Telefono = model.Phone;
+            //dto.Type = model.Type.Value;
+
+            return dto;
+        }
+    }
 }

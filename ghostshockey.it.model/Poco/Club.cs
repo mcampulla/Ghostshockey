@@ -21,6 +21,8 @@ namespace ghostshockey.it.model.Poco
         public string Tag { get; set; }
         public string Icon { get; set; }
 
-        public string DisplayName { get { return Name; } }
+        //public string DisplayName { get { return Name; } }
+
+        public virtual ICollection<Team> Teams { get; set; }
     }
 }

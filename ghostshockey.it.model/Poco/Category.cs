@@ -10,9 +10,8 @@ namespace ghostshockey.it.model.Poco
     {
         public int CategoryID { get; set; }
         public string Name { get; set; }
-        public string Description { get; set; }
+        public string Tag { get; set; }
         public byte Enabled { get; set; }
-        public string DisplayName { get { return Name; } }
     }
 
     public class CategoryComparer : IEqualityComparer<Category>

@@ -79,9 +79,11 @@ namespace ghostshockey.it.api
             builder.ContainerName = "GhostshockeyContainer";
 
             builder.EntitySet<model.Poco.Year>("Years");
-            builder.EntitySet<Category>("Categories");
-            builder.EntitySet<Club>("Clubs");
-            builder.EntitySet<Team>("Teams");
+            builder.EntitySet<model.Poco.Category>("Categories");
+            builder.EntitySet<model.Poco.Club>("Clubs");
+            builder.EntitySet<model.Poco.Team>("Teams");
+            builder.EntitySet<model.Poco.Tournament>("Tournaments");
+            builder.EntitySet<model.Poco.Match>("Matches");
             //builder.EntitySet<VinylRecord>("VinylRecords");
 
             return builder.GetEdmModel();

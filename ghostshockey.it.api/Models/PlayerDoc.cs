@@ -1,4 +1,4 @@
-namespace ghosthockey.it.api
+namespace ghostshockey.it.api.Models
 {
     using System;
     using System.Collections.Generic;

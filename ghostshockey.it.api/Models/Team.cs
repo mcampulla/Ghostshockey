@@ -12,27 +12,37 @@ namespace ghostshockey.it.api.Models
     [Table("Team")]
     public class Team 
     {
-        public Team()
-        {
-        }
+        //public Team()
+        //{
+        //    Matches = new HashSet<Match>();
+        //    Matches1 = new HashSet<Match>();
+        //    PlayerDataTeams = new HashSet<PlayerDataTeam>();
+        //}
 
-        public int TeamID { get; set; }
-
-        
-        public int ClubID { get; set; }
+        public int TeamID { get; set; }      
 
         [Required]
         [StringLength(150)]
         public string Name { get; set; }
-
         
         public int CategoryID { get; set; }
 
         [ForeignKey("CategoryID")]
         public virtual Category Category { get; set; }
 
+        public int ClubID { get; set; }
+
         [ForeignKey("ClubID")]
         public virtual Club Club { get; set; }
+        
+        //[System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        //public virtual ICollection<Match> Matches { get; set; }
+
+        //[System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        //public virtual ICollection<Match> Matches1 { get; set; }
+
+        //[System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        //public virtual ICollection<PlayerDataTeam> PlayerDataTeams { get; set; }
     }
 
     public class TeamComparer : IEqualityComparer<Team>
@@ -53,6 +63,33 @@ namespace ghostshockey.it.api.Models
         {
             int hCode = p.TeamID.GetHashCode();
             return hCode;
+        }
+    }
+
+    public static class TeamMapper
+    {
+        public static Team MapToModel(this model.Poco.Team dto)
+        {
+            Team model = new Team();
+            model.TeamID = dto.TeamID;
+            model.CategoryID = dto.CategoryID;
+            model.ClubID = dto.ClubID;
+            model.Name = dto.Name;
+
+            return model;
+        }
+
+        public static model.Poco.Team MapToDto(this Team model)
+        {
+            model.Poco.Team dto = new model.Poco.Team();
+            dto.TeamID = model.TeamID;
+            dto.Name = model.Name;
+            dto.CategoryID = model.CategoryID;
+            dto.Category = model.Category.MapToDto();
+            dto.ClubID = model.ClubID;
+            dto.Club = model.Club.MapToDto();
+
+            return dto;
         }
     }
 }

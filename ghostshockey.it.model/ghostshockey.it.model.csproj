@@ -41,6 +41,9 @@
     <Compile Include="Dto.cs" />
     <Compile Include="Poco\Category.cs" />
     <Compile Include="Poco\Club.cs" />
+    <Compile Include="Poco\Match.cs" />
+    <Compile Include="Poco\MatchType.cs" />
+    <Compile Include="Poco\Tournament.cs" />
     <Compile Include="Poco\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Poco\Team.cs" />

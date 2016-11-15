@@ -48,4 +48,27 @@ namespace ghostshockey.it.api.Models
             return hCode;
         }
     }
+
+    public static class CategoryMapper
+    {
+        public static Category MapToModel(this model.Poco.Category dto)
+        {
+            Category model = new Category();
+            model.CategoryID = dto.CategoryID;
+            model.Category1 = dto.Name;
+            model.CategoryTag = dto.Tag;
+
+            return model;
+        }
+
+        public static model.Poco.Category MapToDto(this Category model)
+        {
+            model.Poco.Category dto = new model.Poco.Category();
+            dto.CategoryID = model.CategoryID;
+            dto.Name = model.Category1;
+            dto.Tag = model.CategoryTag;
+
+            return dto;
+        }
+    }
 }

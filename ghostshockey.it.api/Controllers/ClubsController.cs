@@ -21,7 +21,7 @@ namespace ghostshockey.it.api.Controllers
         [EnableQuery]
         public IHttpActionResult GetClubs()
         {
-            return Ok(_ctx.Clubs);
+            return Ok(_ctx.Clubs.Include("Teams").ToList().Select(m => m.MapToDto()));
         }
 
         public IHttpActionResult GetClub([FromODataUri]int key)

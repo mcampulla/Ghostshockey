@@ -14,7 +14,7 @@ namespace ghostshockey.it.api.Models
     {
         public Club()
         {
-            Teams = new HashSet<Team>();
+            //Teams = new HashSet<Team>();
         }
 
         public int ClubID { get; set; }
@@ -52,7 +52,7 @@ namespace ghostshockey.it.api.Models
         [StringLength(100)]
         public string Icon { get; set; }
 
-        public virtual ICollection<Team> Teams { get; set; }
+        public ICollection<Team> Teams { get; set; }
     }
 
     public static class ClubMapper
@@ -91,6 +91,7 @@ namespace ghostshockey.it.api.Models
             dto.Tag = model.Tag;
             dto.Telefono = model.Phone;
             //dto.Type = model.Type.Value;
+            dto.Teams = model.Teams != null ? model.Teams.Select(m => m.MapToDto()).ToList() : new List<it.model.Poco.Team>();
 
             return dto;
         }

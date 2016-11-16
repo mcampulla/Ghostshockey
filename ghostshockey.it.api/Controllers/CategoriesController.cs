@@ -10,6 +10,7 @@ using System.Collections.Generic;
 using Microsoft.Azure.Mobile.Server.Config;
 using System.Web.Http.Results;
 using System.Web.OData.Routing;
+using System.Net;
 
 namespace ghostshockey.it.api.Controllers
 {
@@ -31,6 +32,74 @@ namespace ghostshockey.it.api.Controllers
                 return Ok(person);
             else
                 return NotFound();
+        }
+
+
+        public IHttpActionResult Post(Category model)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            _ctx.Categories.Add(model);
+            _ctx.SaveChanges();
+
+            return Created(model);
+        }
+
+        public IHttpActionResult Put([FromODataUri] int key, Category model)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            var current = _ctx.Categories.FirstOrDefault(p => p.CategoryID == key);
+            if (current == null)
+            {
+                return NotFound();
+            }
+
+            model.CategoryID = current.CategoryID;
+
+            _ctx.Entry(current).CurrentValues.SetValues(model);
+            _ctx.SaveChanges();
+
+            return StatusCode(HttpStatusCode.NoContent);
+        }
+
+        public IHttpActionResult Patch([FromODataUri] int key, Delta<Category> patch)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            var current = _ctx.Categories.FirstOrDefault(p => p.CategoryID == key);
+            if (current == null)
+            {
+                return NotFound();
+            }
+
+            patch.Patch(current);
+            _ctx.SaveChanges();
+
+            return StatusCode(HttpStatusCode.NoContent);
+        }
+
+        public IHttpActionResult Delete([FromODataUri] int key)
+        {
+            var current = _ctx.Categories.FirstOrDefault(p => p.CategoryID == key);
+            if (current == null)
+            {
+                return NotFound();
+            }
+
+            _ctx.Categories.Remove(current);
+            _ctx.SaveChanges();
+
+            return StatusCode(HttpStatusCode.NoContent);
         }
 
         protected override void Dispose(bool disposing)

@@ -21,7 +21,7 @@ namespace ghostshockey.it.api.Controllers
         [EnableQuery]
         public IHttpActionResult GetTournaments()
         {
-            return Ok(_ctx.Tournaments.ToList().Select(y => y.MapToDto()));
+            return Ok(_ctx.Tournaments);
         }
 
         public IHttpActionResult GetTournament([FromODataUri]int key)
@@ -29,25 +29,25 @@ namespace ghostshockey.it.api.Controllers
             var model = _ctx.Tournaments.FirstOrDefault(p => p.TournamentID == key);
 
             if (model != null)
-                return Ok(model.MapToDto());
+                return Ok(model);
             else
                 return NotFound();
         }
 
-        public IHttpActionResult Post(model.Poco.Tournament model)
+        public IHttpActionResult Post(Tournament model)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
             
-            _ctx.Tournaments.Add(model.MapToModel());
+            _ctx.Tournaments.Add(model);
             _ctx.SaveChanges();
 
             return Created(model);
         }
 
-        public IHttpActionResult Put([FromODataUri] int key, model.Poco.Tournament model)
+        public IHttpActionResult Put([FromODataUri] int key, Tournament model)
         {
             if (!ModelState.IsValid)
             {
@@ -62,13 +62,13 @@ namespace ghostshockey.it.api.Controllers
 
             model.TournamentID = current.TournamentID;
 
-            _ctx.Entry(current).CurrentValues.SetValues(model.MapToModel());
+            _ctx.Entry(current).CurrentValues.SetValues(model);
             _ctx.SaveChanges();
 
             return StatusCode(HttpStatusCode.NoContent);
         }
 
-        public IHttpActionResult Patch([FromODataUri] int key, Delta<model.Poco.Tournament> patch)
+        public IHttpActionResult Patch([FromODataUri] int key, Delta<Tournament> patch)
         {
             if (!ModelState.IsValid)
             {
@@ -81,8 +81,7 @@ namespace ghostshockey.it.api.Controllers
                 return NotFound();
             }
 
-            //Delta<Tournament> p = new Delta<Tournament>();
-            //patch.Patch(patch.ma);
+            patch.Patch(current);
             _ctx.SaveChanges();
 
             return StatusCode(HttpStatusCode.NoContent);

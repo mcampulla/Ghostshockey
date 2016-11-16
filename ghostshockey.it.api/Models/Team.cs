@@ -66,30 +66,30 @@ namespace ghostshockey.it.api.Models
         }
     }
 
-    public static class TeamMapper
-    {
-        public static Team MapToModel(this model.Poco.Team dto)
-        {
-            Team model = new Team();
-            model.TeamID = dto.TeamID;
-            model.CategoryID = dto.CategoryID;
-            model.ClubID = dto.ClubID;
-            model.Name = dto.Name;
+    //public static class TeamMapper
+    //{
+    //    public static Team MapToModel(this model.Poco.Team dto)
+    //    {
+    //        Team model = new Team();
+    //        model.TeamID = dto.TeamID;
+    //        model.CategoryID = dto.CategoryID;
+    //        model.ClubID = dto.ClubID;
+    //        model.Name = dto.Name;
 
-            return model;
-        }
+    //        return model;
+    //    }
 
-        public static model.Poco.Team MapToDto(this Team model)
-        {
-            model.Poco.Team dto = new model.Poco.Team();
-            dto.TeamID = model.TeamID;
-            dto.Name = model.Name;
-            dto.CategoryID = model.CategoryID;
-            dto.Category = model.Category.MapToDto();
-            dto.ClubID = model.ClubID;
-            dto.Club = model.Club.MapToDto();
+    //    public static model.Poco.Team MapToDto(this Team model)
+    //    {
+    //        model.Poco.Team dto = new model.Poco.Team();
+    //        dto.TeamID = model.TeamID;
+    //        dto.Name = model.Name;
+    //        dto.CategoryID = model.CategoryID;
+    //        dto.Category = model.Category.MapToDto();
+    //        dto.ClubID = model.ClubID;
+    //        dto.Club = model.Club.MapToDto();
 
-            return dto;
-        }
-    }
+    //        return dto;
+    //    }
+    //}
 }

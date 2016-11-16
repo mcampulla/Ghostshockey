@@ -22,7 +22,7 @@ namespace ghostshockey.it.api.Models
         [Column("Year")]
         [Required] 
         [StringLength(100)]
-        public string Year1 { get; set; }
+        public string Name { get; set; }
 
         public DateTime? DateStart { get; set; }
 
@@ -55,30 +55,30 @@ namespace ghostshockey.it.api.Models
         }
     }
 
-    public static class YearMapper
-    {
-        public static Year MapToModel(this model.Poco.Year dto)
-        {
-            Year model = new Year();
-            model.YearID = dto.YearID;
-            model.Year1 = dto.Name;
-            model.DateStart = dto.DateStart;
-            model.DateEnd = dto.DateEnd;
-            model.IsCurrent = dto.IsCurrent;
+    //public static class YearMapper
+    //{
+    //    public static Year MapToModel(this model.Poco.Year dto)
+    //    {
+    //        Year model = new Year();
+    //        model.YearID = dto.YearID;
+    //        model.Year1 = dto.Name;
+    //        model.DateStart = dto.DateStart;
+    //        model.DateEnd = dto.DateEnd;
+    //        model.IsCurrent = dto.IsCurrent;
 
-            return model;
-        }
+    //        return model;
+    //    }
 
-        public static model.Poco.Year MapToDto(this Year model)
-        {
-            model.Poco.Year dto = new model.Poco.Year();
-            dto.YearID = model.YearID;
-            dto.Name = model.Year1;
-            dto.DateStart = model.DateStart;
-            dto.DateEnd = model.DateEnd;
-            dto.IsCurrent = model.IsCurrent;
+    //    public static model.Poco.Year MapToDto(this Year model)
+    //    {
+    //        model.Poco.Year dto = new model.Poco.Year();
+    //        dto.YearID = model.YearID;
+    //        dto.Name = model.Year1;
+    //        dto.DateStart = model.DateStart;
+    //        dto.DateEnd = model.DateEnd;
+    //        dto.IsCurrent = model.IsCurrent;
 
-            return dto;
-        }
-    }
+    //        return dto;
+    //    }
+    //}
 }

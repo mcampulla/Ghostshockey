@@ -37,15 +37,15 @@ namespace ghostshockey.it.api.Models
 
             //modelBuilder.Entity<Year>().HasKey(y => y.YearID);
 
-            modelBuilder.Entity<Category>()
-                .HasMany(e => e.Teams)
-                .WithRequired(e => e.Category)
-                .WillCascadeOnDelete(false);
+            //modelBuilder.Entity<Category>()
+            //    .HasMany(e => e.Teams)
+            //    .WithRequired(e => e.Category)
+            //    .WillCascadeOnDelete(false);
 
-            modelBuilder.Entity<Club>()
-                .HasMany(e => e.Teams)
-                .WithRequired(e => e.Club)
-                .WillCascadeOnDelete(false);
+            //modelBuilder.Entity<Club>()
+            //    .HasMany(e => e.Teams)
+            //    .WithRequired(e => e.Club)
+            //    .WillCascadeOnDelete(false);
 
             //modelBuilder.Entity<Category>()
             //  .HasMany(e => e.Matches)

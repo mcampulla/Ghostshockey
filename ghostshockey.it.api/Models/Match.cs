@@ -72,50 +72,50 @@ namespace ghostshockey.it.api.Models
         public virtual ICollection<Medium> Media { get; set; }
     }
 
-    public static class MatchMapper
-    {
-        public static Match MapToModel(this model.Poco.Match dto)
-        {
-            Match model = new Match();
-            model.MatchID = dto.MatchID;
-            model.AwayTeamID = dto.AwayTeamID;
-            model.AwayTeamScore = dto.AwayTeamScore;
-            model.CategoryID = dto.CategoryID;
-            model.HomeTeamID = dto.HomeTeamID;
-            model.HomeTeamScore = dto.HomeTeamScore;
-            model.MatchCode = dto.MatchCode;
-            model.MatchDate = dto.MatchDate;
-            model.MatchRound = dto.MatchRound;
-            model.MatchStatus = dto.MatchStatus;
-            model.MatchTypeID = dto.MatchTypeID;
-            model.StatTeamID = dto.StatTeamID;
-            model.TournamentID = dto.TournamentID;
-            model.YearID = dto.YearID;
+    //public static class MatchMapper
+    //{
+    //    public static Match MapToModel(this model.Poco.Match dto)
+    //    {
+    //        Match model = new Match();
+    //        model.MatchID = dto.MatchID;
+    //        model.AwayTeamID = dto.AwayTeamID;
+    //        model.AwayTeamScore = dto.AwayTeamScore;
+    //        model.CategoryID = dto.CategoryID;
+    //        model.HomeTeamID = dto.HomeTeamID;
+    //        model.HomeTeamScore = dto.HomeTeamScore;
+    //        model.MatchCode = dto.MatchCode;
+    //        model.MatchDate = dto.MatchDate;
+    //        model.MatchRound = dto.MatchRound;
+    //        model.MatchStatus = dto.MatchStatus;
+    //        model.MatchTypeID = dto.MatchTypeID;
+    //        model.StatTeamID = dto.StatTeamID;
+    //        model.TournamentID = dto.TournamentID;
+    //        model.YearID = dto.YearID;
 
-            return model;
-        }
+    //        return model;
+    //    }
 
-        public static model.Poco.Match MapToDto(this Match model)
-        {
-            model.Poco.Match dto = new model.Poco.Match();
-            dto.MatchID = model.MatchID;
-            dto.AwayTeamID = model.AwayTeamID;
-            dto.AwayTeam = model.AwayTeam.MapToDto();
-            dto.AwayTeamScore = model.AwayTeamScore;
-            dto.CategoryID = model.CategoryID;
-            dto.HomeTeamID = model.HomeTeamID;
-            dto.HomeTeam = model.HomeTeam.MapToDto();
-            dto.HomeTeamScore = model.HomeTeamScore;
-            dto.MatchCode = model.MatchCode;
-            dto.MatchDate = model.MatchDate;
-            dto.MatchRound = model.MatchRound;
-            dto.MatchStatus = model.MatchStatus;
-            dto.MatchTypeID = model.MatchTypeID;
-            dto.StatTeamID = model.StatTeamID;
-            dto.TournamentID = model.TournamentID;
-            dto.YearID = model.YearID;
+    //    public static model.Poco.Match MapToDto(this Match model)
+    //    {
+    //        model.Poco.Match dto = new model.Poco.Match();
+    //        dto.MatchID = model.MatchID;
+    //        dto.AwayTeamID = model.AwayTeamID;
+    //        dto.AwayTeam = model.AwayTeam.MapToDto();
+    //        dto.AwayTeamScore = model.AwayTeamScore;
+    //        dto.CategoryID = model.CategoryID;
+    //        dto.HomeTeamID = model.HomeTeamID;
+    //        dto.HomeTeam = model.HomeTeam.MapToDto();
+    //        dto.HomeTeamScore = model.HomeTeamScore;
+    //        dto.MatchCode = model.MatchCode;
+    //        dto.MatchDate = model.MatchDate;
+    //        dto.MatchRound = model.MatchRound;
+    //        dto.MatchStatus = model.MatchStatus;
+    //        dto.MatchTypeID = model.MatchTypeID;
+    //        dto.StatTeamID = model.StatTeamID;
+    //        dto.TournamentID = model.TournamentID;
+    //        dto.YearID = model.YearID;
 
-            return dto;
-        }
-    }
+    //        return dto;
+    //    }
+    //}
 }

@@ -22,33 +22,33 @@ namespace ghostshockey.it.api.Controllers
         [EnableQuery]
         public IHttpActionResult GetMatches()
         {
-            return Ok(_ctx.Matches.ToList().Select(y => y.MapToDto()));
+            return Ok(_ctx.Matches);
         }
 
         public IHttpActionResult GetMatch([FromODataUri]int key)
         {
-            var person = _ctx.Matches.FirstOrDefault(p => p.MatchID == key);
+            var model = _ctx.Matches.FirstOrDefault(p => p.MatchID == key);
 
-            if (person != null)
-                return Ok(person.MapToDto());
+            if (model != null)
+                return Ok(model);
             else
                 return NotFound();
         }
 
-        public IHttpActionResult Post(model.Poco.Match model)
+        public IHttpActionResult Post(Match model)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
             
-            _ctx.Matches.Add(model.MapToModel());
+            _ctx.Matches.Add(model);
             _ctx.SaveChanges();
 
             return Created(model);
         }
 
-        public IHttpActionResult Put([FromODataUri] int key, model.Poco.Match model)
+        public IHttpActionResult Put([FromODataUri] int key, Match model)
         {
             if (!ModelState.IsValid)
             {
@@ -63,13 +63,13 @@ namespace ghostshockey.it.api.Controllers
 
             model.MatchID = current.MatchID;
 
-            _ctx.Entry(current).CurrentValues.SetValues(model.MapToModel());
+            _ctx.Entry(current).CurrentValues.SetValues(model);
             _ctx.SaveChanges();
 
             return StatusCode(HttpStatusCode.NoContent);
         }
 
-        public IHttpActionResult Patch([FromODataUri] int key, Delta<model.Poco.Match> patch)
+        public IHttpActionResult Patch([FromODataUri] int key, Delta<Match> patch)
         {
             if (!ModelState.IsValid)
             {
@@ -82,7 +82,7 @@ namespace ghostshockey.it.api.Controllers
                 return NotFound();
             }
 
-            //patch.Patch(patch.ma);
+            patch.Patch(current);
             _ctx.SaveChanges();
 
             return StatusCode(HttpStatusCode.NoContent);

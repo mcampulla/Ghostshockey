@@ -33,30 +33,30 @@ namespace ghostshockey.it.api.Models
         //public virtual ICollection<Match> Matches { get; set; }
     }
 
-    public static class TournamentMapper
-    {
-        public static Tournament MapToModel(this model.Poco.Tournament dto)
-        {
-            Tournament model = new Tournament();
-            model.TournamentID = dto.TournamentID;
-            model.Tournament1 = dto.Name;
-            model.Description = dto.Description;
-            model.DateStart = dto.DateStart;
-            model.DateEnd = dto.DateEnd;
+    //public static class TournamentMapper
+    //{
+    //    public static Tournament MapToModel(this model.Poco.Tournament dto)
+    //    {
+    //        Tournament model = new Tournament();
+    //        model.TournamentID = dto.TournamentID;
+    //        model.Tournament1 = dto.Name;
+    //        model.Description = dto.Description;
+    //        model.DateStart = dto.DateStart;
+    //        model.DateEnd = dto.DateEnd;
 
-            return model;
-        }
+    //        return model;
+    //    }
 
-        public static model.Poco.Tournament MapToDto(this Tournament model)
-        {
-            model.Poco.Tournament dto = new model.Poco.Tournament();
-            dto.TournamentID = model.TournamentID;
-            dto.Name = model.Tournament1;
-            dto.Description = model.Description;
-            dto.DateStart = model.DateStart;
-            dto.DateEnd = model.DateEnd;
+    //    public static model.Poco.Tournament MapToDto(this Tournament model)
+    //    {
+    //        model.Poco.Tournament dto = new model.Poco.Tournament();
+    //        dto.TournamentID = model.TournamentID;
+    //        dto.Name = model.Tournament1;
+    //        dto.Description = model.Description;
+    //        dto.DateStart = model.DateStart;
+    //        dto.DateEnd = model.DateEnd;
 
-            return dto;
-        }
-    }
+    //        return dto;
+    //    }
+    //}
 }

@@ -21,15 +21,16 @@ namespace ghostshockey.it.api.Controllers
         [EnableQuery]
         public IHttpActionResult GetClubs()
         {
-            return Ok(_ctx.Clubs.Include("Teams").ToList().Select(m => m.MapToDto()));
+            return Ok(_ctx.Clubs);
         }
 
+        [EnableQuery]
         public IHttpActionResult GetClub([FromODataUri]int key)
         {
-            var team = _ctx.Clubs.FirstOrDefault(p => p.ClubID == key);
+            var model = _ctx.Clubs.Where(p => p.ClubID == key);
 
-            if (team != null)
-                return Ok(team);
+            if (model.Any())
+                return Ok(SingleResult.Create(model));
             else
                 return NotFound();
         }
@@ -80,6 +81,7 @@ namespace ghostshockey.it.api.Controllers
             }
 
             var collectionPropertyValue = club.GetValue(collectionPropertyToGet);
+
             return this.CreateOKHttpActionResult(collectionPropertyValue);
         }
 

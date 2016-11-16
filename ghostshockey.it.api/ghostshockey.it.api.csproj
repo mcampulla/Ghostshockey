@@ -242,12 +242,6 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ghostshockey.it.model\ghostshockey.it.model.csproj">
-      <Project>{3b8bb980-3a16-4b2d-b2b2-f7765e430006}</Project>
-      <Name>ghostshockey.it.model</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Properties\PublishProfiles\api-ghosts - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\api-ghosts - Web Deploy.pubxml" />
   </ItemGroup>

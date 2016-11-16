@@ -21,7 +21,7 @@ namespace ghostshockey.it.api.Models
 
         [Column("Club")]
         [StringLength(100)]
-        public string Club1 { get; set; }
+        public string Name { get; set; }
 
         [StringLength(100)]
         public string Address { get; set; }
@@ -55,45 +55,45 @@ namespace ghostshockey.it.api.Models
         public ICollection<Team> Teams { get; set; }
     }
 
-    public static class ClubMapper
-    {
-        public static Club MapToModel(this model.Poco.Club dto)
-        {
-            Club model = new Club();
-            model.ClubID = dto.ClubID;
-            model.Address = dto.Indirizzo;
-            model.Cap = dto.Cap;
-            model.City = dto.Citta;
-            model.Club1 = dto.Name;
-            model.Email = dto.Email;
-            model.Icon = dto.Icon;
-            model.Mobile = dto.Cellulare;
-            model.Phone = dto.Telefono;
-            model.Region = dto.Provincia;
-            model.Tag = dto.Tag;
-            //model.Type = dto.Type;
+    //public static class ClubMapper
+    //{
+    //    public static Club MapToModel(this model.Poco.Club dto)
+    //    {
+    //        Club model = new Club();
+    //        model.ClubID = dto.ClubID;
+    //        model.Address = dto.Indirizzo;
+    //        model.Cap = dto.Cap;
+    //        model.City = dto.Citta;
+    //        model.Club1 = dto.Name;
+    //        model.Email = dto.Email;
+    //        model.Icon = dto.Icon;
+    //        model.Mobile = dto.Cellulare;
+    //        model.Phone = dto.Telefono;
+    //        model.Region = dto.Provincia;
+    //        model.Tag = dto.Tag;
+    //        //model.Type = dto.Type;
 
-            return model;
-        }
+    //        return model;
+    //    }
 
-        public static model.Poco.Club MapToDto(this Club model)
-        {
-            model.Poco.Club dto = new model.Poco.Club();
-            dto.ClubID = model.ClubID;
-            dto.Name = model.Club1;
-            dto.Cap = model.Cap;
-            dto.Cellulare = model.Mobile;
-            dto.Citta = model.City;
-            dto.Email = model.Email;
-            dto.Icon = model.Icon;
-            dto.Indirizzo = model.Address;
-            dto.Provincia = model.Region;
-            dto.Tag = model.Tag;
-            dto.Telefono = model.Phone;
-            //dto.Type = model.Type.Value;
-            dto.Teams = model.Teams != null ? model.Teams.Select(m => m.MapToDto()).ToList() : new List<it.model.Poco.Team>();
+    //    public static model.Poco.Club MapToDto(this Club model)
+    //    {
+    //        model.Poco.Club dto = new model.Poco.Club();
+    //        dto.ClubID = model.ClubID;
+    //        dto.Name = model.Club1;
+    //        dto.Cap = model.Cap;
+    //        dto.Cellulare = model.Mobile;
+    //        dto.Citta = model.City;
+    //        dto.Email = model.Email;
+    //        dto.Icon = model.Icon;
+    //        dto.Indirizzo = model.Address;
+    //        dto.Provincia = model.Region;
+    //        dto.Tag = model.Tag;
+    //        dto.Telefono = model.Phone;
+    //        //dto.Type = model.Type.Value;
+    //        dto.Teams = model.Teams != null ? model.Teams.Select(m => m.MapToDto()).ToList() : new List<it.model.Poco.Team>();
 
-            return dto;
-        }
-    }
+    //        return dto;
+    //    }
+    //}
 }

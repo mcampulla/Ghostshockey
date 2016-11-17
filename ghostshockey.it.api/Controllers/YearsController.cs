@@ -11,10 +11,12 @@ using Microsoft.Azure.Mobile.Server.Config;
 using System.Web.Http.Results;
 using System.Web.OData.Routing;
 using System.Net;
+using System.Web.Http.Cors;
 
 namespace ghostshockey.it.api.Controllers
 {
     //[MobileAppController]
+    [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class YearsController : ODataController
     {
         GhostsDbContext _ctx = new GhostsDbContext();

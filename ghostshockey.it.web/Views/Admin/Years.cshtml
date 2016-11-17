@@ -1,0 +1,19 @@
+﻿
+@{
+    ViewBag.Title = "Years";
+}
+
+<h2>Years</h2>
+
+<button id="btnload" ng-click="LoadYears();">Load</button>
+
+<div id="list" ng-repeat="year in years">
+    Season: {{year.Name}} <button ng-click="LoadYear(year.YearID);">show</button><br />
+</div>
+
+<div id="detail">
+    Id: {{year.YearID}}<br />
+    Name: {{year.Name}}<br />
+    DateStart: {{year.DateStart}}<br />
+    DateEnd: {{year.DateEnd}}
+</div>

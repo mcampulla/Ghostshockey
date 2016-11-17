@@ -109,6 +109,10 @@
     <ProjectReference Include="..\ghostshockey.it.app\ghostshockey.it.app.csproj">
       <Name>ghostshockey.it.app</Name>
     </ProjectReference>
+    <ProjectReference Include="..\ghostshockey.it.model\ghostshockey.it.model.csproj">
+      <Project>{3b8bb980-3a16-4b2d-b2b2-f7765e430006}</Project>
+      <Name>ghostshockey.it.model</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\Contents.json">

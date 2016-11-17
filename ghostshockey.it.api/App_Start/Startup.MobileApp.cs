@@ -67,6 +67,8 @@ namespace ghostshockey.it.api
 
             config.MapODataServiceRoute("ODataRoute", "odata", GetEdmModel());
 
+            config.EnableCors();
+
             config.EnsureInitialized();
 
             app.UseWebApi(config);

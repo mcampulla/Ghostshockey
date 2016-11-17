@@ -49,6 +49,25 @@ namespace ghostshockey.it.api.Controllers
         [ODataRoute("login")]
         public IHttpActionResult LoginUser(string username, string password)
         {
+            //if (username != "marco" || password != "password") // user-defined function, checks against a database
+            //{
+            //    JwtSecurityToken token = AppServiceLoginHandler.CreateToken(new Claim[] { new Claim(JwtRegisteredClaimNames.Sub, assertion["username"]) },
+            //        mySigningKey,
+            //        myAppURL,
+            //        myAppURL,
+            //        TimeSpan.FromHours(24));
+            //    return Ok(new LoginResult()
+            //    {
+            //        AuthenticationToken = token.RawData,
+            //        User = new LoginResultUser() { UserId = userName.ToString() }
+            //    });
+            //}
+            //else // user assertion was not valid
+            //{
+            //    return this.Request.CreateUnauthorizedResponse();
+            //}
+
+
             if (string.IsNullOrWhiteSpace(username))
                 return BadRequest("The email is not valid!");
 
@@ -86,7 +105,7 @@ namespace ghostshockey.it.api.Controllers
                     AuthExpirationDate = token.ValidTo
                 };
 
-                return Ok( token.RawData);
+                return Ok(token.RawData);
             }
             catch (Exception ex)
             {

@@ -12,10 +12,10 @@
 
         $http({
             url: config.apiurl + "odata/Years",
-            method: "Get",
-            headers: {
-                "Authorization": "Bearer " + token
-            }
+            method: "Get"
+            //,headers: {
+            //    "Authorization": "Bearer " + token
+            //}
         }).then(function (result) {
             deferred.resolve({ "Data": result.data.value });
         }, function () { // failure
@@ -38,10 +38,10 @@
             //    "idSede": idSede,
             //    "includi": includi,
             //    "idTabCFG_Azienda": idTabCFG_Azienda
-            //},
-            headers: {
-                "Authorization": "Bearer " + token
-            }
+            //}
+            //,headers: {
+            //    "Authorization": "Bearer " + token
+            //}
         }).then(function (result) {
             deferred.resolve({ "Data": result.data });
         }, function () { // failure

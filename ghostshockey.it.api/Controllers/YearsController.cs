@@ -16,6 +16,7 @@ using System.Web.Http.Cors;
 namespace ghostshockey.it.api.Controllers
 {
     //[MobileAppController]
+    [Authorize]
     [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class YearsController : ODataController
     {

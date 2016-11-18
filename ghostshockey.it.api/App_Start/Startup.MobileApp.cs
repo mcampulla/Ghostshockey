@@ -14,7 +14,6 @@ using System.Web.OData.Extensions;
 
 using ghostshockey.it.api.Models;
 using Microsoft.OData.Edm;
-using ghostshockey.it.api.Controllers;
 
 namespace ghostshockey.it.api
 {
@@ -87,13 +86,14 @@ namespace ghostshockey.it.api
             builder.EntitySet<Team>("Teams");
             builder.EntitySet<Tournament>("Tournaments");
             builder.EntitySet<Match>("Matches");
+            builder.EntitySet<User>("Users"); //.EntityType.HasKey(s => s.UserId);
             //builder.EntitySet<VinylRecord>("VinylRecords");
 
-            var loginAction = builder.Action("login");
+            var loginAction = builder.EntityType<User>().Collection.Action("Login");
             loginAction.Parameter<string>("username");
             loginAction.Parameter<string>("password");
-            loginAction.Returns<string>();
-            //loginAction.Namespace = "Ghostshockey.Actions";
+            loginAction.ReturnsFromEntitySet<User>("User");
+            loginAction.Namespace = "Ghostshockey.Actions";
 
             return builder.GetEdmModel();
         }

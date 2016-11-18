@@ -18,17 +18,6 @@ using Microsoft.Azure.Mobile.Server.Login;
 
 namespace ghostshockey.it.api.Controllers
 {
-    public class User
-    {
-        public int UserId;
-        public string FacebookId;
-        public string Email;
-        public string Password;
-        public DateTime? LoginDate;
-        public string AuthAccessToken;
-        public DateTime? AuthExpirationDate;
-    }
-
     public class UsersController : ODataController
     {
         GhostsDbContext _ctx = new GhostsDbContext();
@@ -44,28 +33,71 @@ namespace ghostshockey.it.api.Controllers
         public const string JWT_SECURITY_TOKEN_AUDIENCE = "https://api-ghosts.azurewebsites.net/";
         public const string JWT_SECURITY_TOKEN_ISSUER = "https://api-ghosts.azurewebsites.net/";
 
+        static List<User> users = new List<User>();
+
+        public UsersController()
+        {
+            users.Add(new User() { UserId = 1, Email = "user1@email.com" });
+            users.Add(new User() { UserId = 2, Email = "user2@email.com" });
+            users.Add(new User() { UserId = 3, Email = "user3@email.com" });
+            users.Add(new User() { UserId = 4, Email = "user4@email.com" });
+            users.Add(new User() { UserId = 5, Email = "user5@email.com" });
+        }
+
+        //[EnableQuery]
+        //public IHttpActionResult GetUsers()
+        //{
+        //    return Ok(users);
+        //}
+
+        //public IHttpActionResult GetUser([FromODataUri]int key)
+        //{
+        //    var model = users.FirstOrDefault(p => p.UserId == key);
+
+        //    if (model != null)
+        //        return Ok(model);
+        //    else
+        //        return NotFound();
+        //}
 
         [HttpPost]
-        [ODataRoute("login")]
+        [ODataRoute("Users/Ghostshockey.Actions.Login")]
         public IHttpActionResult LoginUser(string username, string password)
         {
-            //if (username != "marco" || password != "password") // user-defined function, checks against a database
+            //return Ok(new User());
+            //object pusername = "";
+            //string username = "";
+            //if (!parameters.TryGetValue("username", out pusername))
             //{
-            //    JwtSecurityToken token = AppServiceLoginHandler.CreateToken(new Claim[] { new Claim(JwtRegisteredClaimNames.Sub, assertion["username"]) },
-            //        mySigningKey,
-            //        myAppURL,
-            //        myAppURL,
-            //        TimeSpan.FromHours(24));
-            //    return Ok(new LoginResult()
-            //    {
-            //        AuthenticationToken = token.RawData,
-            //        User = new LoginResultUser() { UserId = userName.ToString() }
-            //    });
+            //    return NotFound();
             //}
-            //else // user assertion was not valid
+            //username = pusername as string;
+
+            //object ppassword = "";
+            //string password = "";
+            //if (!parameters.TryGetValue("username", out ppassword))
             //{
-            //    return this.Request.CreateUnauthorizedResponse();
+            //    return NotFound();
             //}
+            //password = ppassword as string;
+
+            ////if (username != "marco" || password != "password") // user-defined function, checks against a database
+            ////{
+            ////    JwtSecurityToken token = AppServiceLoginHandler.CreateToken(new Claim[] { new Claim(JwtRegisteredClaimNames.Sub, assertion["username"]) },
+            ////        mySigningKey,
+            ////        myAppURL,
+            ////        myAppURL,
+            ////        TimeSpan.FromHours(24));
+            ////    return Ok(new LoginResult()
+            ////    {
+            ////        AuthenticationToken = token.RawData,
+            ////        User = new LoginResultUser() { UserId = userName.ToString() }
+            ////    });
+            ////}
+            ////else // user assertion was not valid
+            ////{
+            ////    return this.Request.CreateUnauthorizedResponse();
+            ////}
 
 
             if (string.IsNullOrWhiteSpace(username))
@@ -100,12 +132,12 @@ namespace ghostshockey.it.api.Controllers
                 {
                     UserId = 1,
                     Email = username,
-                    //LoginDate = DateTime.Now,
-                    //AuthAccessToken = token.RawData,
+                    LoginDate = DateTime.Now,
+                    AuthAccessToken = token.RawData,
                     AuthExpirationDate = token.ValidTo
                 };
 
-                return Ok(token.RawData);
+                return Ok(u);
             }
             catch (Exception ex)
             {
@@ -125,7 +157,7 @@ namespace ghostshockey.it.api.Controllers
             // you enable App Service Authentication in your App Service from the Azure back end
             //https://azure.microsoft.com/en-us/documentation/articles/app-service-mobile-dotnet-backend-how-to-use-server-sdk/#how-to-work-with-authentication
 
-            var signingKey = Environment.GetEnvironmentVariable("WEBSITE_AUTH_SIGNING_KEY"); // "cXdlcnF3dmpnYXNkbGl2dWJhc2TDoGZu"; // 
+            var signingKey = "cXdlcnF3dmpnYXNkbGl2dWJhc2TDoGZu"; //Environment.GetEnvironmentVariable("WEBSITE_AUTH_SIGNING_KEY"); //  
             var audience = UsersController.JWT_SECURITY_TOKEN_AUDIENCE;
             var issuer = UsersController.JWT_SECURITY_TOKEN_ISSUER;
 

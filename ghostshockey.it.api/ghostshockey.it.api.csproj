@@ -231,6 +231,7 @@
     <Compile Include="Models\Club.cs" />
     <Compile Include="Models\GhostsDbContext.cs" />
     <Compile Include="Models\Team.cs" />
+    <Compile Include="Models\User.cs" />
     <Compile Include="Models\Year.cs" />
     <Compile Include="Models\Player.cs" />
     <Compile Include="Models\PlayerComment.cs" />

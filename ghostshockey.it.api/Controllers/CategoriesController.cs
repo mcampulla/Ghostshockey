@@ -33,8 +33,7 @@ namespace ghostshockey.it.api.Controllers
             else
                 return NotFound();
         }
-
-
+        
         public IHttpActionResult Post(Category model)
         {
             if (!ModelState.IsValid)

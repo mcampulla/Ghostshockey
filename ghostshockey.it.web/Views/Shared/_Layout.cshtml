@@ -6,6 +6,10 @@
     <title>@ViewBag.Title - My ASP.NET Application</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+
+    <link href="~/Content/dx.common.css" rel="stylesheet" />
+    <link href="~/Content/dx.light.css" rel="stylesheet" />
+
     <script>
         var config = {};
         config.apiurl = "https://api-ghosts.azurewebsites.net/";  //"http://localhost:59736/"; //
@@ -26,8 +30,7 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    <li>@Html.ActionLink("Admin", "Index", "Admin")</li>
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>
@@ -43,8 +46,13 @@
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
+    
 
     <script src="~/Scripts/angular.js"></script>
+    <script src="~/Scripts/angular-sanitize.js"></script>
+
+    <script src="~/Scripts/dx.web.js"></script>
+
     <script src="~/App/app-@(ViewBag.NgApp).js"></script>
     <script src="~/App/services/@(ViewBag.NgApp)-service.js"></script>
     @*<script src="~/App/controllers/global.js"></script>*@

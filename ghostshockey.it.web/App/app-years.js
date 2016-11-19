@@ -1,7 +1,7 @@
 ﻿"use strict";
 
 //var app = angular.module("contratto", ['dx', 'ngAnimate', 'ngRoute', 'ui.router', 'ngSanitize']);
-var app = angular.module("Years", []);
+var app = angular.module("Years", ['dx']);
 
 //app.run(['$rootScope', '$templateCache', function ($rootScope, $templateCache) {
 //    $rootScope.$on('$routeChangeStart', function (event, next, current) {

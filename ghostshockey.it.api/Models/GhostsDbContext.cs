@@ -26,8 +26,11 @@ namespace ghostshockey.it.api.Models
         public DbSet<Club> Clubs { get; set; }
         public DbSet<Team> Teams { get; set; }
         public DbSet<Match> Matches { get; set; }
+        public DbSet<MatchType> MatchTypes { get; set; }
         public DbSet<MatchEvent> MatchEvents { get; set; }
         public DbSet<Tournament> Tournaments { get; set; }
+        public DbSet<Player> Players { get; set; }
+        public DbSet<PlayerData> PlayerDatas { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

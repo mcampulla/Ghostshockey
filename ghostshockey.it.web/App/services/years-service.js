@@ -12,7 +12,7 @@
 
         $http({
             url: config.apiurl + "odata/Years",
-            method: "Get"
+            method: "GET"
             //,headers: {
             //    "X-ZUMO-AUTH": token
             //}
@@ -31,7 +31,7 @@
 
         $http({
             url: config.apiurl + "odata/Years(" + yearID + ")",
-            method: "Get"
+            method: "GET"
             //,
             //data: {
             //    "idTabOPE_Contratti_Volture": idVoltura.toString(),
@@ -51,9 +51,61 @@
         return deferred.promise;
     };
 
+    var _setYear = function (yearID, year) {
+
+        var deferred = $q.defer();
+
+        $http({
+            url: config.apiurl + "odata/Years(" + yearID + ")",
+            method: "PATCH",
+            data: {
+                Name: year.Name ? year.Name : null,
+                DateStart: year.DateStart ? new Date(year.DateStart).toISOString() : null,
+                DateEnd: year.DateEnd ? new Date(year.DateEnd).toISOString() : null,
+                IsCurrent: year.IsCurrent ? true : false
+            }
+            //,headers: {
+            //    "X-ZUMO-AUTH": token
+            //}
+        }).then(function (result) {
+            deferred.resolve({ "Data": result.data });
+        }, function () { // failure
+            deferred.reject("Errore durante la richiesta di elaborazione stagione.");
+        });
+
+        return deferred.promise;
+    };
+
+    var _addYear = function (year) {
+
+        var deferred = $q.defer();
+
+        $http({
+            url: config.apiurl + "odata/Years",
+            method: "POST",
+            data: {
+                Name: year.Name ? year.Name : null,
+                DateStart: year.DateStart ? new Date(year.DateStart).toISOString() : null,
+                DateEnd: year.DateEnd ? new Date(year.DateEnd).toISOString() : null,
+                IsCurrent: year.IsCurrent ? true : false
+            }
+            //,headers: {
+            //    "X-ZUMO-AUTH": token
+            //}
+        }).then(function (result) {
+            deferred.resolve({ "Data": result.data });
+        }, function () { // failure
+            deferred.reject("Errore durante la richiesta di elaborazione stagione.");
+        });
+
+        return deferred.promise;
+    };
+
 
     return {
         GetYears: _getYears,
-        GetYear: _getYear
+        GetYear: _getYear,
+        SetYear: _setYear,
+        AddYear: _addYear
     };
 });

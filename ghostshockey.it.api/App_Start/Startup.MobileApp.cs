@@ -86,8 +86,10 @@ namespace ghostshockey.it.api
             builder.EntitySet<Team>("Teams");
             builder.EntitySet<Tournament>("Tournaments");
             builder.EntitySet<Match>("Matches");
-            builder.EntitySet<User>("Users"); //.EntityType.HasKey(s => s.UserId);
-            //builder.EntitySet<VinylRecord>("VinylRecords");
+            builder.EntitySet<MatchType>("MatchTypes");
+            builder.EntitySet<Player>("Players");
+            builder.EntitySet<PlayerData>("PlayerDatas");
+            builder.EntitySet<User>("Users");
 
             var loginAction = builder.EntityType<User>().Collection.Action("Login");
             loginAction.Parameter<string>("username");

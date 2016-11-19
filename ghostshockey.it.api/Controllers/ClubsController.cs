@@ -11,6 +11,7 @@ using System.Collections.Generic;
 using Microsoft.Azure.Mobile.Server.Config;
 using System.Web.Http.Results;
 using System.Web.OData.Routing;
+using System.Net;
 
 namespace ghostshockey.it.api.Controllers
 {
@@ -84,6 +85,75 @@ namespace ghostshockey.it.api.Controllers
 
             return this.CreateOKHttpActionResult(collectionPropertyValue);
         }
+
+
+        public IHttpActionResult Post(Category model)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            _ctx.Categories.Add(model);
+            _ctx.SaveChanges();
+
+            return Created(model);
+        }
+
+        public IHttpActionResult Put([FromODataUri] int key, Club model)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            var current = _ctx.Clubs.FirstOrDefault(p => p.ClubID == key);
+            if (current == null)
+            {
+                return NotFound();
+            }
+
+            model.ClubID = current.ClubID;
+
+            _ctx.Entry(current).CurrentValues.SetValues(model);
+            _ctx.SaveChanges();
+
+            return StatusCode(HttpStatusCode.NoContent);
+        }
+
+        public IHttpActionResult Patch([FromODataUri] int key, Delta<Club> patch)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            var current = _ctx.Clubs.FirstOrDefault(p => p.ClubID == key);
+            if (current == null)
+            {
+                return NotFound();
+            }
+
+            patch.Patch(current);
+            _ctx.SaveChanges();
+
+            return StatusCode(HttpStatusCode.NoContent);
+        }
+
+        public IHttpActionResult Delete([FromODataUri] int key)
+        {
+            var current = _ctx.Clubs.FirstOrDefault(p => p.ClubID == key);
+            if (current == null)
+            {
+                return NotFound();
+            }
+
+            _ctx.Clubs.Remove(current);
+            _ctx.SaveChanges();
+
+            return StatusCode(HttpStatusCode.NoContent);
+        }
+
 
         protected override void Dispose(bool disposing)
         {

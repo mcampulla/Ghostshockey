@@ -214,11 +214,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\Startup.MobileApp.cs" />
+    <Compile Include="Controllers\MatchTypesController.cs" />
     <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Controllers\ClubsController.cs" />
     <Compile Include="Controllers\TeamsController.cs" />
     <Compile Include="Controllers\TournamentsController.cs" />
     <Compile Include="Controllers\MatchesController.cs" />
+    <Compile Include="Controllers\PlayersController.cs" />
+    <Compile Include="Controllers\PlayerDatasController.cs" />
     <Compile Include="Controllers\YearsController.cs" />
     <Compile Include="Controllers\CategoriesController.cs" />
     <Compile Include="Helpers\ODataHelpers.cs" />

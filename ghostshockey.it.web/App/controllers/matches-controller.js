@@ -59,6 +59,18 @@
         paging: {
             pageSize: 20
         },
+        searchPanel: {
+            visible: true,
+            width: 240,
+            placeholder: "Search..."
+        },
+        filterRow : {
+            visible: true,
+            applyFilter: "auto"
+        },
+        headerFilter : {
+            visible: true
+        },
         pager: {
             showPageSizeSelector: true,
             allowedPageSizes: [10, 20, 50],

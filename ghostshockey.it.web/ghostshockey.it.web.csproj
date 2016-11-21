@@ -1049,6 +1049,8 @@
     <Content Include="Content\icons\dxicons.woff" />
     <Content Include="Content\icons\dxicons.ttf" />
     <Content Include="Content\icons\dxicons.eot" />
+    <None Include="Properties\PublishProfiles\web-ghosts - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\web-ghosts - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-1.11.3.intellisense.js" />
     <Content Include="Scripts\jquery-1.11.3.js" />
     <Content Include="Scripts\jquery-1.11.3.min.js" />

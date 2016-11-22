@@ -12,7 +12,7 @@ namespace ghostshockey.it.api.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public MatchType()
         {
-            Matches = new HashSet<Match>();
+            //Matches = new HashSet<Match>();
         }
 
         public int MatchTypeID { get; set; }

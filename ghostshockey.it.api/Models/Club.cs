@@ -19,7 +19,6 @@ namespace ghostshockey.it.api.Models
 
         public int ClubID { get; set; }
 
-        [Column("Club")]
         [StringLength(100)]
         public string Name { get; set; }
 

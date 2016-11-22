@@ -20,6 +20,7 @@
 
     $scope.dataGridOptions = {
         dataSource: store,
+        allowColumnResizing: true,
         paging: {
             pageSize: 20
         },
@@ -29,26 +30,44 @@
             showInfo: true
         },
         editing: {
-            mode: "row",
+            mode: "form",
             allowUpdating: true,
             allowDeleting: true,
             allowAdding: true
         },
         columns: [{
+            caption:"ID",
             dataField: "ClubID",
             allowEditing: false,
-            width: 70,
+            width: 50,
             alignment: 'center'
-        }, "Name", "Address", "Cap", "City", "Region", "Phone", "Mobile", "Email", {
+        }, "Name", "Address", {
+            dataField: "Cap",
+            width: 60
+        }, "City", {
+            dataField: "Region",
+            width: 40
+        }, "Phone", "Mobile", {
+            dataField: "Email",
+            width: 40,
+            cellTemplate: "emailTemplate"
+        }, {
             dataField: "Type",
-            width: 100,
+            width: 50,
             lookup: {
                 dataSource: types,
                 displayExpr: "Name",
                 valueExpr: "ID"
             },
             validationRules: [{ type: "required" }]
-        }, "Tag", "Icon"]
+        }, {
+            dataField: "Tag",
+            width: 50
+        }, {
+            dataField: "Icon",
+            width: 40,
+            cellTemplate: "iconTemplate"
+        }]
     }
 
 });

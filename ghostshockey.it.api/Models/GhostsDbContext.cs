@@ -19,6 +19,7 @@ namespace ghostshockey.it.api.Models
 
         public GhostsDbContext() : base(connectionStringName)
         {
+            Database.SetInitializer<GhostsDbContext>(new DropCreateDatabaseAlways<GhostsDbContext>());
         } 
 
         public DbSet<Year> Years { get; set; }
@@ -40,18 +41,35 @@ namespace ghostshockey.it.api.Models
 
             //modelBuilder.Entity<Year>().HasKey(y => y.YearID);
 
-            //modelBuilder.Entity<Category>()
-            //    .HasMany(e => e.Teams)
-            //    .WithRequired(e => e.Category)
-            //    .WillCascadeOnDelete(false);
+            modelBuilder.Conventions.Remove<ManyToManyCascadeDeleteConvention>();
 
-            //modelBuilder.Entity<Club>()
-            //    .HasMany(e => e.Teams)
-            //    .WithRequired(e => e.Club)
-            //    .WillCascadeOnDelete(false);
+            modelBuilder.Entity<Team>()
+                .HasMany(e => e.Matches)
+                .WithRequired(e => e.AwayTeam)
+                .WillCascadeOnDelete(false);
 
-            //modelBuilder.Entity<Category>()
-            //  .HasMany(e => e.Matches)
+            modelBuilder.Entity<Team>()
+                .HasMany(e => e.Matches)
+                .WithRequired(e => e.HomeTeam)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<Player>()
+                .HasMany(e => e.PlayerDatas)
+                .WithRequired(e => e.Player)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<PlayerData>()
+                .HasMany(e => e.Stats)
+                .WithRequired(e => e.PlayerData)
+                .WillCascadeOnDelete(false);
+
+
+            //modelBuilder.Entity<PlayerData>()
+            //    .HasMany(e => e.Teams)
+            //    .WithMany(e => e.PlayerDatas);
+
+            //modelBuilder.Entity<Team>()
+            //  .HasMany(e => e.player)
             //  .WithRequired(e => e.Category)
             //  .WillCascadeOnDelete(false);
 
@@ -59,7 +77,7 @@ namespace ghostshockey.it.api.Models
             //    .HasMany(e => e.PlayerDatas)
             //    .WithRequired(e => e.Category)
             //    .WillCascadeOnDelete(false);
-                     
+
             //modelBuilder.Entity<Match>()
             //    .HasMany(e => e.MatchEvents)
             //    .WithRequired(e => e.Match)
@@ -127,5 +145,14 @@ namespace ghostshockey.it.api.Models
             //    .WillCascadeOnDelete(false);
         }
     }
+
+    public class SchoolDBInitializer : CreateDatabaseIfNotExists<GhostsDbContext>
+    {
+        protected override void Seed(GhostsDbContext context)
+        {
+            base.Seed(context);
+        }
+    }
+
 
 }

@@ -19,7 +19,6 @@ namespace ghostshockey.it.api.Models
         //[Column("YearID")]
         public int YearID { get; set; }
 
-        [Column("Year")]
         [Required] 
         [StringLength(100)]
         public string Name { get; set; }
@@ -29,9 +28,8 @@ namespace ghostshockey.it.api.Models
         public DateTime? DateEnd { get; set; }
 
         public bool? IsCurrent { get; set; }
-
-
-        //public ICollection<Category> Cazzi { get; set; }
+        
+        public virtual ICollection<Category> Categories { get; set; }
     }
 
     public class YearComparer : IEqualityComparer<Year>

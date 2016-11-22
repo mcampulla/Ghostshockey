@@ -12,4 +12,16 @@
     }
 </style>
 
-<div id="gridContainer" dx-data-grid="dataGridOptions"></div>
+<div id="gridContainer" dx-data-grid="dataGridOptions" dx-item-alias="item">
+    <div data-options="dxTemplate:{ name:'iconTemplate' }">
+        <div ng-switch on="!item.value">
+            <span ng-switch-when="true"></span>
+            <span ng-switch-default><img ng-src="/content/teams/{{item.value}}" width="32" /></span>
+        </div>
+    </div>
+    <div data-options="dxTemplate:{ name:'emailTemplate' }">
+        <div ng-show="item.value">
+            <a href="mailto:{{item.value}}" class="btn btn-default btn-xs"><span class='glyphicon glyphicon-envelope' aria-hidden='true'></span></a>
+        </div>
+    </div>
+</div>

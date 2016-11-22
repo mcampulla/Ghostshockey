@@ -38,29 +38,22 @@ namespace ghostshockey.it.api.Models
 
         public int MatchTypeID { get; set; }
 
-        public int CategoryID { get; set; }
-
-        public int YearID { get; set; }
+        public virtual MatchType MatchType { get; set; }
 
         public int? TournamentID { get; set; }
 
+        public virtual Tournament Tournament { get; set; }
+
         public int? StatTeamID { get; set; }
 
-        public virtual Category Category { get; set; }
+        [ForeignKey("StatTeamID")]
+        public virtual Team StatTeam { get; set; }
 
         [ForeignKey("AwayTeamID")]
-        [Column("Team1")]
         public virtual Team AwayTeam { get; set; }
 
         [ForeignKey("HomeTeamID")]
-        [Column("Team")]
         public virtual Team HomeTeam { get; set; }
-
-        public virtual MatchType MatchType { get; set; }
-
-        public virtual Tournament Tournament { get; set; }
-
-        public virtual Year Year { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<MatchEvent> MatchEvents { get; set; }

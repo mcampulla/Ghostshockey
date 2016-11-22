@@ -13,7 +13,11 @@ namespace ghostshockey.it.api.Models
 
         public int MatchID { get; set; }
 
+        public virtual Match Match { get; set; }
+
         public int PlayerDataID { get; set; }
+
+        public virtual PlayerData PlayerData { get; set; }
 
         public byte Goal { get; set; }
 
@@ -38,7 +42,5 @@ namespace ghostshockey.it.api.Models
         public byte Minus { get; set; }
 
         public byte Score { get; set; }
-
-        public virtual Match Match { get; set; }
     }
 }

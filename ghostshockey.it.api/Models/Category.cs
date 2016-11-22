@@ -16,9 +16,8 @@ namespace ghostshockey.it.api.Models
 
         [Required]
         [StringLength(3)]
-        public string CategoryTag { get; set; }
+        public string Tag { get; set; }
 
-        [Column("Category")]
         [Required]
         [StringLength(10)]
         public string Name { get; set; }
@@ -26,6 +25,8 @@ namespace ghostshockey.it.api.Models
         public byte Enabled { get; set; }
 
         public virtual ICollection<Team> Teams { get; set; }
+        public virtual ICollection<Year> Years { get; set; }
+        public virtual ICollection<Tournament> Tournaments { get; set; }
     }
 
     public class CategoryComparer : IEqualityComparer<Category>

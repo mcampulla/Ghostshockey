@@ -23,6 +23,9 @@
 
     $scope.dataGridOptions = {
         dataSource: store,
+        selection: {
+            mode: "single"
+        },
         paging: {
             pageSize: 20
         },
@@ -38,15 +41,27 @@
             allowAdding: true
         },
         columns: [{
+                caption: "ID",
                 dataField: "PlayerID",
                 allowEditing: false,
                 width: 70,
                 alignment: 'center'
-        }, "LastName", "FirstName", "Address", "City", "Zip", "Region", {
+        }, "LastName", "FirstName", "Address", "City", {
+            dataField: "Zip",
+            width: 60
+        }, {
+            dataField: "Region",
+            width: 40
+        }, {
             dataField: "Birth",
-            width: 120,
+            width: 90,
+            alignment: 'right',
             validationRules: [{ type: "required" }]
-        }, "Email", "Phone", "Mobile" ]
+        }, {
+            dataField: "Email",
+            width: 40,
+            cellTemplate: "emailTemplate"
+        }, "Phone", "Mobile" ]
     }
 
 });

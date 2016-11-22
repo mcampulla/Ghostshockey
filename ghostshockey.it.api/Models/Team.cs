@@ -36,13 +36,13 @@ namespace ghostshockey.it.api.Models
         public virtual Club Club { get; set; }
         
         //[System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        //public virtual ICollection<Match> Matches { get; set; }
+        public virtual ICollection<Match> Matches { get; set; }
 
         //[System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         //public virtual ICollection<Match> Matches1 { get; set; }
 
         //[System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        //public virtual ICollection<PlayerDataTeam> PlayerDataTeams { get; set; }
+        public virtual ICollection<PlayerData> PlayerDatas { get; set; }
     }
 
     public class TeamComparer : IEqualityComparer<Team>

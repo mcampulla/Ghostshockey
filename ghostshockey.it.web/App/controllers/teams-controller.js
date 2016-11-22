@@ -8,14 +8,14 @@
     });
 
     var storeClubs = new DevExpress.data.ODataStore({
-        url: "http://api-ghosts.azurewebsites.net/odata/Clubs?$select=ClubID,Name",
+        url: "http://api-ghosts.azurewebsites.net/odata/Clubs",
         key: "ClubID",
         keyType: "Int32",
         version: 4
     });
 
     var storeCategories = new DevExpress.data.ODataStore({
-        url: "http://api-ghosts.azurewebsites.net/odata/Categories?$select=CategoryID,Name",
+        url: "http://api-ghosts.azurewebsites.net/odata/Categories",
         key: "CategoryID",
         keyType: "Int32",
         version: 4
@@ -23,6 +23,7 @@
 
     $scope.dataGridOptions = {
         dataSource: store,
+        allowColumnResizing: true,
         paging: {
             pageSize: 20
         },
@@ -32,10 +33,23 @@
             showInfo: true
         },
         editing: {
-            mode: "row",
+            mode: "form",
             allowUpdating: true,
             allowDeleting: true,
             allowAdding: true
+        },
+        grouping: {
+            autoExpandAll: true
+        },
+        groupPanel: {
+            visible: true
+        },
+        //filterRow: {
+        //    visible: true,
+        //    applyFilter: "auto"
+        //},
+        headerFilter: {
+            visible: true
         },
         columns: [{
             dataField: "TeamID",
@@ -56,7 +70,8 @@
             validationRules: [{ type: "required" }]
         }, {
             dataField: "ClubID",
-            width: 100,
+            width: 200,
+            groupIndex:0,
             lookup: {
                 dataSource: storeClubs,
                 displayExpr: "Name",

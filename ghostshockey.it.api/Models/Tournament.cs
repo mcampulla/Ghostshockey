@@ -17,20 +17,26 @@ namespace ghostshockey.it.api.Models
 
         public int TournamentID { get; set; }
 
-        [Column("Tournament")]
         [Required]
         [StringLength(100)]
-        public string Tournament1 { get; set; }
+        public string Name { get; set; }
 
-        [StringLength(1000)]
-        public string Description { get; set; }
+        public int YearID { get; set; }
+
+        [ForeignKey("YearID")]
+        public virtual Year Year { get; set; }
+
+        public int CategoryID { get; set; }
+
+        [ForeignKey("CategoryID")]
+        public virtual Category Category { get; set; }
 
         public DateTime? DateStart { get; set; }
 
         public DateTime? DateEnd { get; set; }
 
         //[System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        //public virtual ICollection<Match> Matches { get; set; }
+        public virtual ICollection<Match> Matches { get; set; }
     }
 
     //public static class TournamentMapper

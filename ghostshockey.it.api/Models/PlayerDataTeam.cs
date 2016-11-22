@@ -6,18 +6,18 @@ namespace ghostshockey.it.api.Models
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("PlayerDataTeam")]
-    public partial class PlayerDataTeam
-    {
-        [Key]
-        public int RowID { get; set; }
+    //[Table("PlayerDataTeam")]
+    //public partial class PlayerDataTeam
+    //{
+    //    [Key]
+    //    public int RowID { get; set; }
 
-        public int TeamID { get; set; }
+    //    public int TeamID { get; set; }
 
-        public int PlayerDataID { get; set; }
+    //    public int PlayerDataID { get; set; }
 
-        public virtual PlayerData PlayerData { get; set; }
+    //    public virtual PlayerData PlayerData { get; set; }
 
-        public virtual Team Team { get; set; }
-    }
+    //    public virtual Team Team { get; set; }
+    //}
 }

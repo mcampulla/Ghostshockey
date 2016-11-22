@@ -39,7 +39,7 @@ namespace ghostshockey.it.api.Models
         [StringLength(100)]
         public string Region { get; set; }
 
-        public DateTime Birth { get; set; }
+        public DateTime BirthDate { get; set; }
 
         [StringLength(100)]
         public string Email { get; set; }

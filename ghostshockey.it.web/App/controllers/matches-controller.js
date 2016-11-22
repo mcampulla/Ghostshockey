@@ -55,7 +55,12 @@
 
     $scope.dataGridOptions = {
         dataSource: store,
+        allowColumnResizing: true,
         columnAutoWidth: true,
+        hoverStateEnabled: true,
+        selection: {
+            mode: "single"
+        },
         paging: {
             pageSize: 20
         },
@@ -83,32 +88,49 @@
             allowAdding: true
         },
         columns: [{
+            caption: "ID",
             dataField: "MatchID",
             allowEditing: false,
-            width: 70,
+            width: 50,
             alignment: 'center'
-            }, "MatchID", {
+            }, {
                 dataField: "HomeTeamID",
-                width: 100,
+                width: 180,
                 lookup: {
                     dataSource: storeTeams,
                     displayExpr: "Name",
                     valueExpr: "TeamID"
                 }
-            }, "HomeTeamScore", {
+            }, {
+                dataField: "HomeTeamScore",
+                width: 40,
+                alignment: 'center'
+            }, {
                 dataField: "AwayTeamID",
-                width: 100,
+                width: 180,
                 lookup: {
                     dataSource: storeTeams,
                     displayExpr: "Name",
                     valueExpr: "TeamID"
                 }
-            }, "AwayTeamScore", {
+            }, {
+                dataField: "AwayTeamScore",
+                width: 40,
+                alignment:'center'
+            }, {
                 dataField: "MatchDate",
-                width: 120
-            }, "MatchCode", "MatchRound", {
+                width: 80,
+                alignment: 'right'
+            }, {
+                dataField: "MatchCode",
+                width: 50,
+                hidingPriority: 0
+            }, {
+                dataField: "MatchRound",
+                hidingPriority: 1
+            }, {
                 dataField: "MatchStatus",
-                width: 100,
+                width: 70,
                 lookup: {
                     dataSource: states,
                     displayExpr: "Name",
@@ -116,15 +138,16 @@
                 }
             }, {
                 dataField: "MatchTypeID",
-                width: 100,
+                width: 70,
                 lookup: {
                     dataSource: storeMatchTypes,
                     displayExpr: "MatchType1",
                     valueExpr: "MatchTypeID"
-                }
+                },
+                hidingPriority: 2
             }, {
                 dataField: "CategoryID",
-                width: 100,
+                width: 80,
                 lookup: {
                     dataSource: storeCategories,
                     displayExpr: "Name",
@@ -132,7 +155,7 @@
                 }
             }, {
                 dataField: "YearID",
-                width: 100,
+                width: 80,
                 lookup: {
                     dataSource: storeYears,
                     displayExpr: "Name",
@@ -153,8 +176,12 @@
                     dataSource: storeTeams,
                     displayExpr: "Name",
                     valueExpr: "TeamID"
-                }
-            }]
+                },
+                hidingPriority: 0
+            }],
+        onSelectionChanged: function (selectedItems) {
+            alert(selectedItems.selectedRowsData[0]);
+        }
     }
 
 });

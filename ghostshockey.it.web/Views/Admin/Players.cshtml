@@ -13,4 +13,10 @@
     }
 </style>
 
-<div id="gridContainer" dx-data-grid="dataGridOptions"></div>
+<div id="gridContainer" dx-data-grid="dataGridOptions" dx-item-alias="item">
+    <div data-options="dxTemplate:{ name:'emailTemplate' }">
+        <div ng-show="item.value">
+            <a href="mailto:{{item.value}}" class="btn btn-default btn-xs"><span class='glyphicon glyphicon-envelope' aria-hidden='true'></span></a>
+        </div>
+    </div>
+</div>

@@ -13,16 +13,18 @@ namespace ghostshockey.it.api.Models
 
         public int MatchID { get; set; }
 
+        public virtual Match Match { get; set; }
+
         public int Icon { get; set; }
+
+        public int Period { get; set; }
 
         [Required]
         [StringLength(500)]
         public string Comment { get; set; }
 
-        public int Time { get; set; }
+        public int Minute { get; set; }
 
-        public int TimeSec { get; set; }
-
-        public virtual Match Match { get; set; }
+        public int Second { get; set; }
     }
 }

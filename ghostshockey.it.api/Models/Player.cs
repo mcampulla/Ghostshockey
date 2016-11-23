@@ -58,5 +58,7 @@ namespace ghostshockey.it.api.Models
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<PlayerDoc> PlayerDocs { get; set; }
+
+        public virtual ICollection<MatchStat> Stats { get; set; }
     }
 }

@@ -19,7 +19,7 @@ namespace ghostshockey.it.api.Models
 
         public GhostsDbContext() : base(connectionStringName)
         {
-            Database.SetInitializer<GhostsDbContext>(new DropCreateDatabaseAlways<GhostsDbContext>());
+            Database.SetInitializer<GhostsDbContext>(null);
         } 
 
         public DbSet<Year> Years { get; set; }
@@ -58,10 +58,10 @@ namespace ghostshockey.it.api.Models
                 .WithRequired(e => e.Player)
                 .WillCascadeOnDelete(false);
 
-            modelBuilder.Entity<PlayerData>()
-                .HasMany(e => e.Stats)
-                .WithRequired(e => e.PlayerData)
-                .WillCascadeOnDelete(false);
+            //modelBuilder.Entity<PlayerData>()
+            //    .HasMany(e => e.Stats)
+            //    .WithRequired(e => e.PlayerData)
+            //    .WillCascadeOnDelete(false);
 
 
             //modelBuilder.Entity<PlayerData>()

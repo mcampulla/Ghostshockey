@@ -15,9 +15,9 @@ namespace ghostshockey.it.api.Models
 
         public virtual Match Match { get; set; }
 
-        public int PlayerDataID { get; set; }
+        public int PlayerID { get; set; }
 
-        public virtual PlayerData PlayerData { get; set; }
+        public virtual Player Player { get; set; }
 
         public byte Goal { get; set; }
 

@@ -25,7 +25,6 @@ namespace ghostshockey.it.api.Models
         public byte Enabled { get; set; }
 
         public virtual ICollection<Team> Teams { get; set; }
-        public virtual ICollection<Year> Years { get; set; }
         public virtual ICollection<Tournament> Tournaments { get; set; }
     }
 

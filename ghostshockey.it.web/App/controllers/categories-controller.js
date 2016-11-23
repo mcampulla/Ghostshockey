@@ -32,12 +32,13 @@
             allowAdding: true
         },
         columns: [{
+            caption: "ID",
             dataField: "CategoryID",
             allowEditing: false,
             width: 70,
             alignment: 'center'
         }, {
-            dataField: "CategoryTag",
+            dataField: "Tag",
             width: 100,
             validationRules: [{ type: "required" }]
         }, {

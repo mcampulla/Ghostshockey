@@ -21,20 +21,6 @@
         version: 4
     });
 
-    var storeCategories = new DevExpress.data.ODataStore({
-        url: "http://api-ghosts.azurewebsites.net/odata/Categories",
-        key: "CategoryID",
-        keyType: "Int32",
-        version: 4
-    });
-
-    var storeYears = new DevExpress.data.ODataStore({
-        url: "http://api-ghosts.azurewebsites.net/odata/Years",
-        key: "YearID",
-        keyType: "Int32",
-        version: 4
-    });
-
     var storeTournaments = new DevExpress.data.ODataStore({
         url: "http://api-ghosts.azurewebsites.net/odata/Tournaments",
         key: "TournamentID",
@@ -63,11 +49,6 @@
         },
         paging: {
             pageSize: 20
-        },
-        searchPanel: {
-            visible: true,
-            width: 240,
-            placeholder: "Search..."
         },
         filterRow : {
             visible: true,
@@ -127,6 +108,7 @@
                 hidingPriority: 0
             }, {
                 dataField: "MatchRound",
+                width: 50,
                 hidingPriority: 1
             }, {
                 dataField: "MatchStatus",
@@ -146,27 +128,11 @@
                 },
                 hidingPriority: 2
             }, {
-                dataField: "CategoryID",
-                width: 80,
-                lookup: {
-                    dataSource: storeCategories,
-                    displayExpr: "Name",
-                    valueExpr: "CategoryID"
-                }
-            }, {
-                dataField: "YearID",
-                width: 80,
-                lookup: {
-                    dataSource: storeYears,
-                    displayExpr: "Name",
-                    valueExpr: "YearID"
-                }
-            }, {
                 dataField: "TournamentID",
                 width: 100,
                 lookup: {
                     dataSource: storeTournaments,
-                    displayExpr: "Tournament1",
+                    displayExpr: "Name ",
                     valueExpr: "TournamentID"
                 }
             }, {

@@ -24,6 +24,7 @@
             allowAdding: true
         },
         columns: [{
+            caption: "ID",
             dataField: "YearID",
             allowEditing: false,
             width: 70,

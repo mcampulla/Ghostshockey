@@ -7,6 +7,20 @@
         version: 4
     });
 
+    var storeCategories = new DevExpress.data.ODataStore({
+        url: "http://api-ghosts.azurewebsites.net/odata/Categories",
+        key: "CategoryID",
+        keyType: "Int32",
+        version: 4
+    });
+
+    var storeYears = new DevExpress.data.ODataStore({
+        url: "http://api-ghosts.azurewebsites.net/odata/Years",
+        key: "YearID",
+        keyType: "Int32",
+        version: 4
+    });
+
     var types = [{
         "ID": 0,
         "Name": "Team"
@@ -20,8 +34,14 @@
 
     $scope.dataGridOptions = {
         dataSource: store,
+        selection: {
+            mode: "single"
+        },
         paging: {
             pageSize: 20
+        },        
+        headerFilter: {
+            visible: true
         },
         pager: {
             showPageSizeSelector: true,
@@ -35,15 +55,31 @@
             allowAdding: true
         },
         columns: [{
+            caption: "ID",
             dataField: "TournamentID",
             allowEditing: false,
             width: 70,
             alignment: 'center'
         }, {
-            caption: "Name",
-            dataField: "Tournament1",
+            dataField: "Name",
             validationRules: [{ type: "required" }]
-        }, "Description", {
+        }, {
+            dataField: "CategoryID",
+            width: 100,
+            lookup: {
+                dataSource: storeCategories,
+                displayExpr: "Name",
+                valueExpr: "CategoryID"
+            }
+        }, {
+            dataField: "YearID",
+            width: 100,
+            lookup: {
+                dataSource: storeYears,
+                displayExpr: "Name",
+                valueExpr: "YearID"
+            }
+        }, {
             dataField: "DateStart",
             width: 120,
             validationRules: [{ type: "required" }]

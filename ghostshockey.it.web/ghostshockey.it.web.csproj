@@ -188,6 +188,7 @@
     <Content Include="App\app-tournaments.js" />
     <Content Include="App\app-matches.js" />
     <Content Include="App\app-players.js" />
+    <Content Include="App\app-home-index.js" />
     <Content Include="App\app-years.js" />
     <Content Include="App\controllers\matches-controller.js" />
     <Content Include="App\controllers\players-controller.js" />
@@ -1118,6 +1119,7 @@
     <Content Include="Views\Admin\Matches.cshtml" />
     <Content Include="Views\Admin\Tournaments.cshtml" />
     <Content Include="Views\Admin\Players.cshtml" />
+    <Content Include="Views\Shared\_LayoutAdmin.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

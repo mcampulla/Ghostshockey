@@ -10,6 +10,7 @@ namespace ghostshockey.it.web.Controllers
     {
         public ActionResult Index()
         {
+            ViewBag.NgApp = "home-index";
             return View();
         }
 

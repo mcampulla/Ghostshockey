@@ -16,7 +16,7 @@
 
     </script>
 </head>
-<body ng-app="@ViewBag.NgApp" ng-controller="@(ViewBag.NgApp)-controller">
+<body ng-app="@ViewBag.NgApp" ng-controller="@(ViewBag.NgApp)Controller">
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
@@ -54,6 +54,9 @@
     <script src="~/Scripts/dx.web.js"></script>
 
     <script src="~/App/app-@(ViewBag.NgApp).js"></script>
+    <script src="~/App/services/@(ViewBag.NgApp)-service.js"></script>
+    @*<script src="~/App/controllers/global.js"></script>*@
+    <script src="~/App/controllers/@(ViewBag.NgApp)-controller.js"></script>
 
     @RenderSection("scripts", required: false)
 </body>

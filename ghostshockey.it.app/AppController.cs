@@ -20,9 +20,51 @@ namespace ghostshockey.it.app
         public List<T> Value { get; set; }
     }
 
+    public class TextInputDoneEventArgs : EventArgs
+    {
+        public TextInputDoneEventArgs(string text)
+        {
+            this.Text = text;
+        }
+
+        public string Text
+        {
+            get;
+            private set;
+        }
+    }
+
     public static class AppController
     {
-    
+
+        public static class Globals
+        {
+            // Splash screen timeout (milliseconds)
+            public const int SplashScreenTimeout = 2000;
+
+            // Data storage file uri
+            public const string DatabaseFilePath = "internal://database.db3";
+
+            // Base URL for service client endpoints
+            public const string ServicesBaseUrl = "https://listy-api.azurewebsites.net/";
+            // Default service client timeout in seconds
+            public const int ServicesDefaultRequestTimeout = 60;
+        }
+
+        public static class Colors
+        {
+            public const string MiddleRedPurple = "160C28";
+            public const string OrangeYellow = "EFCB68";
+            public const string Alabaster = "E1EFE6";
+            public const string AshGray = "AEB7B3";
+            public const string RichBlack = "000411";
+            public const string Black = "000000";
+            public const string White = "FFFFFF";
+            public const string Green = "00A454";
+            public const string Orange = "ED7218";
+            public const string Red = "D01818";
+        }
+
         public static async Task AddYear(string text, Action<object> success, Action<string> fail, Action<Exception> exception = null)
         {
             try

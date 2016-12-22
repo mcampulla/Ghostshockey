@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<resources>
+  <color name="MiddleRedPurple">#160C28</color>
+  <color name="OrangeYellow">#EFCB68</color>
+  <color name="Alabaster">#E1EFE6</color>
+  <color name="AshGray">#AEB7B3</color>
+  <color name="RichBlack">#000411</color>
+  <color name="Black">#000000</color>
+  <color name="White">#FFFFFF</color>
+  <color name="Green">#00A454</color>
+  <color name="Orange">#ED7218</color>
+  <color name="Red">#D01818</color>
+</resources>

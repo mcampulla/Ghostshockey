@@ -16,10 +16,10 @@ namespace ghostshockey.it.app.Droid
     using Android.Widget;
 
     using AdMaiora.AppKit.UI;
-    
+
     #pragma warning disable CS4014
     [Activity(
-        Label = "Listy",
+        Label = "Ghosts",
         MainLauncher = true,        
         Theme = "@style/AppTheme.Splash",
         ScreenOrientation = ScreenOrientation.Portrait,
@@ -82,24 +82,25 @@ namespace ghostshockey.it.app.Droid
             string osVersion = null;
             string appVersion = "1.0.0";
             string appBuild = "1";
-            //AppController.Utility.GetContextInfo(out osVersion, out appVersion, out appBuild);
-            //this.VersionLabel.Text = string.Format("v{0} ({1})", appVersion, appBuild);
+            AppController.Utility.GetContextInfo(out osVersion, out appVersion, out appBuild);
+            this.VersionLabel.Text = string.Format("v{0} ({1})", appVersion, appBuild);
 
-            //DateTime beginTime = DateTime.Now;
-            //AppController.Utility.ExecuteOnAsyncTask(CancellationToken.None,
-            //    () =>
-            //    {
-            //        // Do background stuff here...
+            DateTime beginTime = DateTime.Now;
+            AppController.Utility.ExecuteOnAsyncTask(CancellationToken.None,
+                () =>
+                {
+                    // Do background stuff here...
 
-            //        // Check if we must wait at least splash screen timeout
-            //        TimeSpan loadSpan = DateTime.Now - beginTime;
-            //        Thread.Sleep(Math.Max(0, AppController.Globals.SplashScreenTimeout - (int)loadSpan.TotalMilliseconds));
-            //    },
-            //    () =>
-            //    {
-            //        if (!RestoreUser())
+                    // Check if we must wait at least splash screen timeout
+                    TimeSpan loadSpan = DateTime.Now - beginTime;
+                    Thread.Sleep(Math.Max(0, AppController.Globals.SplashScreenTimeout - (int)loadSpan.TotalMilliseconds));
+                },
+                () =>
+                {
+
+                    //if (!RestoreUser())
                         MakeRoot(typeof(MainActivity));
-            //    });
+                });
         }
 
         protected override void OnDestroy()

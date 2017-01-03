@@ -3022,55 +3022,52 @@ namespace ghostshockey.it.app.Droid
 			public const int common_plus_signin_btn_text_light_pressed = 2130837620;
 			
 			// aapt resource value: 0x7f020075
-			public const int Icon = 2130837621;
+			public const int icon_calendar = 2130837621;
 			
 			// aapt resource value: 0x7f020076
-			public const int icon_calendar = 2130837622;
+			public const int icon_head = 2130837622;
 			
 			// aapt resource value: 0x7f020077
-			public const int icon_head = 2130837623;
+			public const int icon_tags = 2130837623;
 			
 			// aapt resource value: 0x7f020078
-			public const int icon_tags = 2130837624;
+			public const int icon_title = 2130837624;
 			
 			// aapt resource value: 0x7f020079
-			public const int icon_title = 2130837625;
+			public const int image_check_empty = 2130837625;
 			
 			// aapt resource value: 0x7f02007a
-			public const int image_check_empty = 2130837626;
+			public const int image_check_empty_green = 2130837626;
 			
 			// aapt resource value: 0x7f02007b
-			public const int image_check_empty_green = 2130837627;
+			public const int image_check_empty_orange = 2130837627;
 			
 			// aapt resource value: 0x7f02007c
-			public const int image_check_empty_orange = 2130837628;
+			public const int image_check_empty_red = 2130837628;
 			
 			// aapt resource value: 0x7f02007d
-			public const int image_check_empty_red = 2130837629;
+			public const int image_check_selected = 2130837629;
 			
 			// aapt resource value: 0x7f02007e
-			public const int image_check_selected = 2130837630;
+			public const int image_check_selected_green = 2130837630;
 			
 			// aapt resource value: 0x7f02007f
-			public const int image_check_selected_green = 2130837631;
+			public const int image_check_selected_orange = 2130837631;
 			
 			// aapt resource value: 0x7f020080
-			public const int image_check_selected_orange = 2130837632;
+			public const int image_check_selected_red = 2130837632;
 			
 			// aapt resource value: 0x7f020081
-			public const int image_check_selected_red = 2130837633;
+			public const int image_head = 2130837633;
 			
 			// aapt resource value: 0x7f020082
-			public const int image_head = 2130837634;
+			public const int image_head1 = 2130837634;
 			
 			// aapt resource value: 0x7f020083
-			public const int image_head1 = 2130837635;
+			public const int image_head2 = 2130837635;
 			
 			// aapt resource value: 0x7f020084
-			public const int image_head2 = 2130837636;
-			
-			// aapt resource value: 0x7f020085
-			public const int notification_template_icon_bg = 2130837637;
+			public const int notification_template_icon_bg = 2130837636;
 			
 			static Drawable()
 			{
@@ -3085,71 +3082,104 @@ namespace ghostshockey.it.app.Droid
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f090087
-			public const int BlockLayout = 2131296391;
+			// aapt resource value: 0x7f090068
+			public const int AwayImage = 2131296360;
 			
-			// aapt resource value: 0x7f090071
-			public const int CatImage = 2131296369;
+			// aapt resource value: 0x7f090069
+			public const int AwayLabel = 2131296361;
 			
-			// aapt resource value: 0x7f090063
-			public const int CheckButton = 2131296355;
+			// aapt resource value: 0x7f090067
+			public const int AwayLayout = 2131296359;
 			
-			// aapt resource value: 0x7f090086
-			public const int CompletedDateLabel = 2131296390;
+			// aapt resource value: 0x7f09006a
+			public const int AwayScoreLabel = 2131296362;
 			
-			// aapt resource value: 0x7f090085
-			public const int CompletedLabel = 2131296389;
+			// aapt resource value: 0x7f090078
+			public const int BlockLayout = 2131296376;
+			
+			// aapt resource value: 0x7f09007f
+			public const int CatImage = 2131296383;
+			
+			// aapt resource value: 0x7f09006d
+			public const int CategoryLabel = 2131296365;
+			
+			// aapt resource value: 0x7f09006e
+			public const int CheckButton = 2131296366;
+			
+			// aapt resource value: 0x7f090094
+			public const int CompletedDateLabel = 2131296404;
+			
+			// aapt resource value: 0x7f090093
+			public const int CompletedLabel = 2131296403;
 			
 			// aapt resource value: 0x7f09005d
 			public const int ContentLayout = 2131296349;
 			
-			// aapt resource value: 0x7f090084
-			public const int CreatedDateLabel = 2131296388;
+			// aapt resource value: 0x7f090092
+			public const int CreatedDateLabel = 2131296402;
 			
-			// aapt resource value: 0x7f090083
-			public const int CreatedLabel = 2131296387;
-			
-			// aapt resource value: 0x7f09007a
-			public const int DaysButton = 2131296378;
-			
-			// aapt resource value: 0x7f090082
-			public const int DescriptionLabel = 2131296386;
-			
-			// aapt resource value: 0x7f09007e
-			public const int DescriptionLayout = 2131296382;
-			
-			// aapt resource value: 0x7f090080
-			public const int DescriptionText = 2131296384;
-			
-			// aapt resource value: 0x7f090081
-			public const int DetailsLayout = 2131296385;
-			
-			// aapt resource value: 0x7f090077
-			public const int DueDateImage = 2131296375;
-			
-			// aapt resource value: 0x7f090079
-			public const int DueDateLabel = 2131296377;
-			
-			// aapt resource value: 0x7f090076
-			public const int DueDateLayout = 2131296374;
+			// aapt resource value: 0x7f090091
+			public const int CreatedLabel = 2131296401;
 			
 			// aapt resource value: 0x7f09006c
-			public const int EmailLabel = 2131296364;
-			
-			// aapt resource value: 0x7f090067
-			public const int EmailText = 2131296359;
-			
-			// aapt resource value: 0x7f090072
-			public const int GoToLoginButton = 2131296370;
-			
-			// aapt resource value: 0x7f09006d
-			public const int HeadImage = 2131296365;
-			
-			// aapt resource value: 0x7f090066
-			public const int InputLayout = 2131296358;
+			public const int DateLabel = 2131296364;
 			
 			// aapt resource value: 0x7f090088
-			public const int InputText = 2131296392;
+			public const int DaysButton = 2131296392;
+			
+			// aapt resource value: 0x7f090090
+			public const int DescriptionLabel = 2131296400;
+			
+			// aapt resource value: 0x7f09008c
+			public const int DescriptionLayout = 2131296396;
+			
+			// aapt resource value: 0x7f09008e
+			public const int DescriptionText = 2131296398;
+			
+			// aapt resource value: 0x7f09008f
+			public const int DetailsLayout = 2131296399;
+			
+			// aapt resource value: 0x7f090085
+			public const int DueDateImage = 2131296389;
+			
+			// aapt resource value: 0x7f090087
+			public const int DueDateLabel = 2131296391;
+			
+			// aapt resource value: 0x7f090084
+			public const int DueDateLayout = 2131296388;
+			
+			// aapt resource value: 0x7f09007a
+			public const int EmailLabel = 2131296378;
+			
+			// aapt resource value: 0x7f090071
+			public const int EmailText = 2131296369;
+			
+			// aapt resource value: 0x7f09006b
+			public const int FooterLayout = 2131296363;
+			
+			// aapt resource value: 0x7f090080
+			public const int GoToLoginButton = 2131296384;
+			
+			// aapt resource value: 0x7f09007b
+			public const int HeadImage = 2131296379;
+			
+			// aapt resource value: 0x7f090064
+			public const int HomeImage = 2131296356;
+			
+			// aapt resource value: 0x7f090065
+			public const int HomeLabel = 2131296357;
+			
+			// aapt resource value: 0x7f090063
+			public const int HomeLayout = 2131296355;
+			
+			// aapt resource value: 0x7f090066
+			public const int HomeScoreLabel = 2131296358;
+			
+			// aapt resource value: 0x7f090070
+			public const int InputLayout = 2131296368;
+			
+			// aapt resource value: 0x7f090095
+			public const int InputText = 2131296405;
 			
 			// aapt resource value: 0x7f09005e
 			public const int LoadLayout = 2131296350;
@@ -3157,71 +3187,83 @@ namespace ghostshockey.it.app.Droid
 			// aapt resource value: 0x7f09005f
 			public const int LoadProgress = 2131296351;
 			
-			// aapt resource value: 0x7f090069
-			public const int LoginButton = 2131296361;
+			// aapt resource value: 0x7f090073
+			public const int LoginButton = 2131296371;
 			
-			// aapt resource value: 0x7f090065
-			public const int LoginLayout = 2131296357;
+			// aapt resource value: 0x7f09006f
+			public const int LoginLayout = 2131296367;
 			
 			// aapt resource value: 0x7f090060
 			public const int LogoImage = 2131296352;
 			
-			// aapt resource value: 0x7f09006e
-			public const int PasswordLabel = 2131296366;
+			// aapt resource value: 0x7f090076
+			public const int MatchLayout = 2131296374;
 			
-			// aapt resource value: 0x7f090068
-			public const int PasswordText = 2131296360;
-			
-			// aapt resource value: 0x7f09006a
-			public const int RegisterButton = 2131296362;
-			
-			// aapt resource value: 0x7f09007f
-			public const int SideBar = 2131296383;
+			// aapt resource value: 0x7f090079
+			public const int MatchList = 2131296377;
 			
 			// aapt resource value: 0x7f09007c
-			public const int TagsImage = 2131296380;
+			public const int PasswordLabel = 2131296380;
 			
-			// aapt resource value: 0x7f09007b
-			public const int TagsLayout = 2131296379;
-			
-			// aapt resource value: 0x7f09007d
-			public const int TagsText = 2131296381;
-			
-			// aapt resource value: 0x7f090064
-			public const int TaskList = 2131296356;
+			// aapt resource value: 0x7f090072
+			public const int PasswordText = 2131296370;
 			
 			// aapt resource value: 0x7f090074
-			public const int TitleImage = 2131296372;
+			public const int RegisterButton = 2131296372;
+			
+			// aapt resource value: 0x7f09008d
+			public const int SideBar = 2131296397;
+			
+			// aapt resource value: 0x7f09008a
+			public const int TagsImage = 2131296394;
+			
+			// aapt resource value: 0x7f090089
+			public const int TagsLayout = 2131296393;
+			
+			// aapt resource value: 0x7f09008b
+			public const int TagsText = 2131296395;
+			
+			// aapt resource value: 0x7f090082
+			public const int TitleImage = 2131296386;
 			
 			// aapt resource value: 0x7f090061
 			public const int TitleLabel = 2131296353;
 			
-			// aapt resource value: 0x7f090073
-			public const int TitleLayout = 2131296371;
+			// aapt resource value: 0x7f090081
+			public const int TitleLayout = 2131296385;
 			
-			// aapt resource value: 0x7f090075
-			public const int TitleText = 2131296373;
+			// aapt resource value: 0x7f090083
+			public const int TitleText = 2131296387;
 			
 			// aapt resource value: 0x7f09005c
 			public const int Toolbar = 2131296348;
 			
-			// aapt resource value: 0x7f09006b
-			public const int VerifyButton = 2131296363;
+			// aapt resource value: 0x7f090096
+			public const int TournamentList = 2131296406;
+			
+			// aapt resource value: 0x7f090075
+			public const int VerifyButton = 2131296373;
 			
 			// aapt resource value: 0x7f090062
 			public const int VersionLabel = 2131296354;
 			
-			// aapt resource value: 0x7f090070
-			public const int WelcomeLabel = 2131296368;
+			// aapt resource value: 0x7f09007e
+			public const int WelcomeLabel = 2131296382;
 			
-			// aapt resource value: 0x7f09006f
-			public const int WelcomeLayout = 2131296367;
+			// aapt resource value: 0x7f09007d
+			public const int WelcomeLayout = 2131296381;
 			
-			// aapt resource value: 0x7f090078
-			public const int WillDoLabel = 2131296376;
+			// aapt resource value: 0x7f090086
+			public const int WillDoLabel = 2131296390;
 			
-			// aapt resource value: 0x7f090089
-			public const int action0 = 2131296393;
+			// aapt resource value: 0x7f090077
+			public const int YearLabel = 2131296375;
+			
+			// aapt resource value: 0x7f090097
+			public const int YearList = 2131296407;
+			
+			// aapt resource value: 0x7f090098
+			public const int action0 = 2131296408;
 			
 			// aapt resource value: 0x7f09004d
 			public const int action_bar = 2131296333;
@@ -3247,8 +3289,8 @@ namespace ghostshockey.it.app.Droid
 			// aapt resource value: 0x7f09004e
 			public const int action_context_bar = 2131296334;
 			
-			// aapt resource value: 0x7f09008d
-			public const int action_divider = 2131296397;
+			// aapt resource value: 0x7f09009c
+			public const int action_divider = 2131296412;
 			
 			// aapt resource value: 0x7f090003
 			public const int action_menu_divider = 2131296259;
@@ -3289,14 +3331,14 @@ namespace ghostshockey.it.app.Droid
 			// aapt resource value: 0x7f090037
 			public const int buttonPanel = 2131296311;
 			
-			// aapt resource value: 0x7f09008a
-			public const int cancel_action = 2131296394;
+			// aapt resource value: 0x7f090099
+			public const int cancel_action = 2131296409;
 			
 			// aapt resource value: 0x7f090045
 			public const int checkbox = 2131296325;
 			
-			// aapt resource value: 0x7f090090
-			public const int chronometer = 2131296400;
+			// aapt resource value: 0x7f09009f
+			public const int chronometer = 2131296415;
 			
 			// aapt resource value: 0x7f09002a
 			public const int clamp = 2131296298;
@@ -3331,8 +3373,8 @@ namespace ghostshockey.it.app.Droid
 			// aapt resource value: 0x7f090023
 			public const int end = 2131296291;
 			
-			// aapt resource value: 0x7f090095
-			public const int end_padder = 2131296405;
+			// aapt resource value: 0x7f0900a4
+			public const int end_padder = 2131296420;
 			
 			// aapt resource value: 0x7f090031
 			public const int expand_activities_button = 2131296305;
@@ -3358,8 +3400,8 @@ namespace ghostshockey.it.app.Droid
 			// aapt resource value: 0x7f090032
 			public const int image = 2131296306;
 			
-			// aapt resource value: 0x7f090094
-			public const int info = 2131296404;
+			// aapt resource value: 0x7f0900a3
+			public const int info = 2131296419;
 			
 			// aapt resource value: 0x7f090000
 			public const int item_touch_helper_previous_elevation = 2131296256;
@@ -3367,11 +3409,11 @@ namespace ghostshockey.it.app.Droid
 			// aapt resource value: 0x7f090012
 			public const int light = 2131296274;
 			
-			// aapt resource value: 0x7f09008e
-			public const int line1 = 2131296398;
+			// aapt resource value: 0x7f09009d
+			public const int line1 = 2131296413;
 			
-			// aapt resource value: 0x7f090092
-			public const int line3 = 2131296402;
+			// aapt resource value: 0x7f0900a1
+			public const int line3 = 2131296417;
 			
 			// aapt resource value: 0x7f090013
 			public const int listMode = 2131296275;
@@ -3379,8 +3421,8 @@ namespace ghostshockey.it.app.Droid
 			// aapt resource value: 0x7f090034
 			public const int list_item = 2131296308;
 			
-			// aapt resource value: 0x7f09008c
-			public const int media_actions = 2131296396;
+			// aapt resource value: 0x7f09009b
+			public const int media_actions = 2131296411;
 			
 			// aapt resource value: 0x7f090024
 			public const int middle = 2131296292;
@@ -3490,8 +3532,8 @@ namespace ghostshockey.it.app.Droid
 			// aapt resource value: 0x7f09000e
 			public const int standard = 2131296270;
 			
-			// aapt resource value: 0x7f09008b
-			public const int status_bar_latest_event_content = 2131296395;
+			// aapt resource value: 0x7f09009a
+			public const int status_bar_latest_event_content = 2131296410;
 			
 			// aapt resource value: 0x7f090058
 			public const int submit_area = 2131296344;
@@ -3499,17 +3541,17 @@ namespace ghostshockey.it.app.Droid
 			// aapt resource value: 0x7f090015
 			public const int tabMode = 2131296277;
 			
-			// aapt resource value: 0x7f090093
-			public const int text = 2131296403;
+			// aapt resource value: 0x7f0900a2
+			public const int text = 2131296418;
 			
-			// aapt resource value: 0x7f090091
-			public const int text2 = 2131296401;
+			// aapt resource value: 0x7f0900a0
+			public const int text2 = 2131296416;
 			
 			// aapt resource value: 0x7f090040
 			public const int textSpacerNoButtons = 2131296320;
 			
-			// aapt resource value: 0x7f09008f
-			public const int time = 2131296399;
+			// aapt resource value: 0x7f09009e
+			public const int time = 2131296414;
 			
 			// aapt resource value: 0x7f090036
 			public const int title = 2131296310;
@@ -3661,64 +3703,79 @@ namespace ghostshockey.it.app.Droid
 			public const int ActivitySplash = 2130903066;
 			
 			// aapt resource value: 0x7f03001b
-			public const int CellTask = 2130903067;
+			public const int CellMatch = 2130903067;
 			
 			// aapt resource value: 0x7f03001c
-			public const int FragmentAgenda = 2130903068;
+			public const int CellText = 2130903068;
 			
 			// aapt resource value: 0x7f03001d
-			public const int FragmentLogin = 2130903069;
+			public const int CellTournament = 2130903069;
 			
 			// aapt resource value: 0x7f03001e
-			public const int FragmentRegistration0 = 2130903070;
+			public const int CellYear = 2130903070;
 			
 			// aapt resource value: 0x7f03001f
-			public const int FragmentRegistration1 = 2130903071;
+			public const int FragmentLogin = 2130903071;
 			
 			// aapt resource value: 0x7f030020
-			public const int FragmentRegistrationDone = 2130903072;
+			public const int FragmentMatch = 2130903072;
 			
 			// aapt resource value: 0x7f030021
-			public const int FragmentTask = 2130903073;
+			public const int FragmentMatches = 2130903073;
 			
 			// aapt resource value: 0x7f030022
-			public const int FragmentTextInput = 2130903074;
+			public const int FragmentRegistration0 = 2130903074;
 			
 			// aapt resource value: 0x7f030023
-			public const int notification_media_action = 2130903075;
+			public const int FragmentRegistration1 = 2130903075;
 			
 			// aapt resource value: 0x7f030024
-			public const int notification_media_cancel_action = 2130903076;
+			public const int FragmentRegistrationDone = 2130903076;
 			
 			// aapt resource value: 0x7f030025
-			public const int notification_template_big_media = 2130903077;
+			public const int FragmentTask = 2130903077;
 			
 			// aapt resource value: 0x7f030026
-			public const int notification_template_big_media_narrow = 2130903078;
+			public const int FragmentTextInput = 2130903078;
 			
 			// aapt resource value: 0x7f030027
-			public const int notification_template_lines = 2130903079;
+			public const int FragmentTournaments = 2130903079;
 			
 			// aapt resource value: 0x7f030028
-			public const int notification_template_media = 2130903080;
+			public const int notification_media_action = 2130903080;
 			
 			// aapt resource value: 0x7f030029
-			public const int notification_template_part_chronometer = 2130903081;
+			public const int notification_media_cancel_action = 2130903081;
 			
 			// aapt resource value: 0x7f03002a
-			public const int notification_template_part_time = 2130903082;
+			public const int notification_template_big_media = 2130903082;
 			
 			// aapt resource value: 0x7f03002b
-			public const int select_dialog_item_material = 2130903083;
+			public const int notification_template_big_media_narrow = 2130903083;
 			
 			// aapt resource value: 0x7f03002c
-			public const int select_dialog_multichoice_material = 2130903084;
+			public const int notification_template_lines = 2130903084;
 			
 			// aapt resource value: 0x7f03002d
-			public const int select_dialog_singlechoice_material = 2130903085;
+			public const int notification_template_media = 2130903085;
 			
 			// aapt resource value: 0x7f03002e
-			public const int support_simple_spinner_dropdown_item = 2130903086;
+			public const int notification_template_part_chronometer = 2130903086;
+			
+			// aapt resource value: 0x7f03002f
+			public const int notification_template_part_time = 2130903087;
+			
+			// aapt resource value: 0x7f030030
+			public const int select_dialog_item_material = 2130903088;
+			
+			// aapt resource value: 0x7f030031
+			public const int select_dialog_multichoice_material = 2130903089;
+			
+			// aapt resource value: 0x7f030032
+			public const int select_dialog_singlechoice_material = 2130903090;
+			
+			// aapt resource value: 0x7f030033
+			public const int support_simple_spinner_dropdown_item = 2130903091;
 			
 			static Layout()
 			{

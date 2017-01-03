@@ -25,6 +25,7 @@ namespace ghostshockey.it.api.Controllers
             return Ok(_ctx.Matches);
         }
 
+        [EnableQuery]
         public IHttpActionResult GetMatch([FromODataUri]int key)
         {
             var model = _ctx.Matches.FirstOrDefault(p => p.MatchID == key);

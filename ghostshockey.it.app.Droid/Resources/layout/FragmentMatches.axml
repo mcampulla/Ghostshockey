@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
     <admaiora.appkit.ui.ItemRecyclerView
-        android:id="@+id/TaskList"
+        android:id="@+id/MatchList"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:choiceMode="singleChoice"

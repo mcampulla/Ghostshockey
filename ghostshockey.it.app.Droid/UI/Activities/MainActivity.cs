@@ -79,7 +79,7 @@
                 //    .Commit();
 
                 this.SupportFragmentManager.BeginTransaction()
-                    .Add(Resource.Id.ContentLayout, new AgendaFragment(), "AgendaFragment")
+                    .Add(Resource.Id.ContentLayout, new TournamentsFragment(), "TournamentsFragment")
                     .Commit();
 
                 _userRestored = this.Arguments.GetBoolean("UserRestored", false);
@@ -87,13 +87,13 @@
                 {
                     _userId = this.Arguments.GetInt("UserId");
 
-                    var f = new AgendaFragment();
-                    f.Arguments = new Bundle();
-                    f.Arguments.PutInt("UserId", _userId);
-                    this.SupportFragmentManager.BeginTransaction()
-                        .AddToBackStack("BeforeAgendaFragment")
-                        .Replace(Resource.Id.ContentLayout, f, "AgendaFragment")
-                        .Commit();
+                    //var f = new AgendaFragment();
+                    //f.Arguments = new Bundle();
+                    //f.Arguments.PutInt("UserId", _userId);
+                    //this.SupportFragmentManager.BeginTransaction()
+                    //    .AddToBackStack("BeforeAgendaFragment")
+                    //    .Replace(Resource.Id.ContentLayout, f, "AgendaFragment")
+                    //    .Commit();
                 }
             }
         }

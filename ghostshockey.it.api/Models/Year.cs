@@ -28,6 +28,8 @@ namespace ghostshockey.it.api.Models
         public DateTime? DateEnd { get; set; }
 
         public bool? IsCurrent { get; set; }
+
+        public ICollection<Tournament> Tournaments { get; set; }
     }
 
     public class YearComparer : IEqualityComparer<Year>

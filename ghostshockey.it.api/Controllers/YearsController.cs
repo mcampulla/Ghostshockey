@@ -12,6 +12,7 @@ using System.Web.Http.Results;
 using System.Web.OData.Routing;
 using System.Net;
 using System.Web.Http.Cors;
+using ghostshockey.it.api.Helpers;
 
 namespace ghostshockey.it.api.Controllers
 {
@@ -36,6 +37,28 @@ namespace ghostshockey.it.api.Controllers
                 return Ok(model);
             else
                 return NotFound();
+        }
+
+        [HttpGet]
+        [ODataRoute("Years({key})/Tournaments")]
+        public IHttpActionResult GetTournamentCollectionProperty([FromODataUri]int key)
+        {
+            var collectionPropertyToGet = Url.Request.RequestUri.Segments.Last();
+            var year = _ctx.Years.Include(collectionPropertyToGet)
+                .FirstOrDefault(p => p.YearID == key);
+
+            if (year == null)
+            {
+                return NotFound();
+            }
+
+            if (!year.HasProperty(collectionPropertyToGet))
+            {
+                return StatusCode(System.Net.HttpStatusCode.NoContent);
+            }
+
+            var collectionPropertyValue = year.GetValue(collectionPropertyToGet);
+            return this.CreateOKHttpActionResult(collectionPropertyValue);
         }
 
         public IHttpActionResult Post(Year model)

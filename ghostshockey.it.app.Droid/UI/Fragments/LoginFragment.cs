@@ -222,13 +222,13 @@ namespace ghostshockey.it.app.Droid
                 //        AppController.Settings.AuthAccessToken = data.AuthAccessToken;
                 //        AppController.Settings.AuthExpirationDate = data.AuthExpirationDate.GetValueOrDefault().ToLocalTime();
 
-                        var f = new AgendaFragment();
-                        f.Arguments = new Bundle();
-                f.Arguments.PutInt("UserId", 1); // data.UserId);
-                this.FragmentManager.BeginTransaction()
-                    .AddToBackStack("BeforeAgendaFragment")
-                    .Replace(Resource.Id.ContentLayout, f, "AgendaFragment")
-                    .Commit();
+                //        var f = new AgendaFragment();
+                //        f.Arguments = new Bundle();
+                //f.Arguments.PutInt("UserId", 1); // data.UserId);
+                //this.FragmentManager.BeginTransaction()
+                //    .AddToBackStack("BeforeAgendaFragment")
+                //    .Replace(Resource.Id.ContentLayout, f, "AgendaFragment")
+                //    .Commit();
                 //    },
                 //    // Service call error
                 //    (error) =>

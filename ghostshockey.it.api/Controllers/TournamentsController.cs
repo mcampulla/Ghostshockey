@@ -11,6 +11,7 @@ using Microsoft.Azure.Mobile.Server.Config;
 using System.Web.Http.Results;
 using System.Web.OData.Routing;
 using System.Net;
+using ghostshockey.it.api.Helpers;
 
 namespace ghostshockey.it.api.Controllers
 {
@@ -32,6 +33,28 @@ namespace ghostshockey.it.api.Controllers
                 return Ok(model);
             else
                 return NotFound();
+        }
+
+        [HttpGet]
+        [ODataRoute("Tournaments({key})/Matches")]
+        public IHttpActionResult GetMatchesCollectionProperty([FromODataUri]int key)
+        {
+            var collectionPropertyToGet = Url.Request.RequestUri.Segments.Last();
+            var tournament = _ctx.Tournaments.Include(collectionPropertyToGet)
+                .FirstOrDefault(p => p.TournamentID == key);
+
+            if (tournament == null)
+            {
+                return NotFound();
+            }
+
+            if (!tournament.HasProperty(collectionPropertyToGet))
+            {
+                return StatusCode(System.Net.HttpStatusCode.NoContent);
+            }
+
+            var collectionPropertyValue = tournament.GetValue(collectionPropertyToGet);
+            return this.CreateOKHttpActionResult(collectionPropertyValue);
         }
 
         public IHttpActionResult Post(Tournament model)

@@ -53,7 +53,7 @@
             
             // Setup Application
             //AppController.EnableSettings(new AdMaiora.AppKit.Data.UserSettingsPlatformAndroid());
-            //AppController.EnableUtilities(new AdMaiora.AppKit.Utils.ExecutorPlatformAndroid());
+            AppController.EnableUtilities(new AdMaiora.AppKit.Utils.ExecutorPlatformAndroid());
             //AppController.EnableFileSystem(new AdMaiora.AppKit.IO.FileSystemPlatformAndroid());
             //AppController.EnableDataStorage(new AdMaiora.AppKit.Data.DataStoragePlatformAndroid());
             //AppController.EnableServices(new AdMaiora.AppKit.Services.ServiceClientPlatformAndroid());                                    

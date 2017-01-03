@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/HomeLayout"
+        android:background="@color/Orange">
+        <ImageView
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_alignParentLeft="true"
+            android:id="@+id/HomeImage" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/HomeLabel"
+            android:layout_toRightOf="@+id/HomeImage" />
+        <TextView
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:id="@+id/HomeScoreLabel"
+            android:textSize="36dp"
+            android:layout_alignParentRight="true" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/AwayLayout"
+        android:layout_below="@+id/HomeLayout"
+        android:background="@color/Orange">
+        <ImageView
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_alignParentLeft="true"
+            android:id="@+id/AwayImage" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/AwayLabel"
+            android:layout_below="@id/HomeLabel"
+            android:layout_toRightOf="@+id/AwayImage" />
+        <TextView
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:textSize="36dp"
+            android:id="@+id/AwayScoreLabel"
+            android:layout_below="@id/HomeLabel"
+            android:layout_alignParentRight="true" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/FooterLayout"
+        android:layout_below="@+id/AwayLayout"
+        android:background="@color/Orange">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/DateLabel"
+            android:layout_alignParentRight="true" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/CategoryLabel"
+            android:layout_below="@id/DateLabel" />
+    </RelativeLayout>
+    <View
+      android:layout_width="match_parent"
+      android:layout_height="2px"
+      android:background="@color/Black"
+      android:layout_below="@+id/FooterLayout" />
+</RelativeLayout>

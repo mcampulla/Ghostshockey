@@ -21,12 +21,9 @@ namespace ghostshockey.it.model.Poco
         public int MatchStatus { get; set; }
         public int MatchTypeID { get; set; }
         public virtual MatchType MatchType { get; set; }
-        public virtual Category Category { get; set; }
-        public int CategoryID { get; set; }
-        public int YearID { get; set; }
-        public virtual Year Year { get; set; }
         public int? TournamentID { get; set; }
         public virtual Tournament Tournament { get; set; }
         public int? StatTeamID { get; set; }
+        public Team StatTeam { get; set; }
     }
 }

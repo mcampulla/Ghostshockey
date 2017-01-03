@@ -1,12 +1,15 @@
-﻿using AdMaiora.AppKit.Services;
-using ghostshockey.it.model.Poco;
+﻿using ghostshockey.it.model.Poco;
 using Newtonsoft.Json;
 using RestSharp.Portable;
 using RestSharp.Portable.HttpClient;
 using System;
+using System.Linq;
 using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
+
+using AdMaiora.AppKit.Services;
+using AdMaiora.AppKit.Utils;
 
 namespace ghostshockey.it.app
 {
@@ -65,6 +68,21 @@ namespace ghostshockey.it.app
             public const string Red = "D01818";
         }
 
+        private static Executor _utility;
+
+        public static Executor Utility
+        {
+            get
+            {
+                return _utility;
+            }
+        }
+
+        public static void EnableUtilities(IExecutorPlatform utilityPlatform)
+        {
+            _utility = new Executor(utilityPlatform);
+        }
+
         public static async Task AddYear(string text, Action<object> success, Action<string> fail, Action<Exception> exception = null)
         {
             try
@@ -112,47 +130,117 @@ namespace ghostshockey.it.app
 
 
 
-        public static async Task GetAllYears(Action<object> success, Action<string> fail, Action<Exception> exception = null)
+        public static async Task GetYears(Action<Year[]> success, Action<string> error, Action finished)
         {
             try
             {
-                //var context = new GhostshockeyContainer(new Uri("http://api-ghosts.azurewebsites.net/odata"));
-                //var years = await context.Years.IncludeTotalCount().ExecuteAsync();
-
-                //ghostshockey.it.api.Models.Year newyear = new ghostshockey.it.api.Models.Year();
-                //newyear.Year1 = "test";
-                //newyear.DateStart = DateTime.Now;
-                //newyear.DateEnd = DateTime.Now.AddDays(30);
-
-                //context.AddToYears(newyear);
-                //var r = await context.SaveChangesAsync();   
-
-                //var client = new ODataClient("http://api-ghosts.azurewebsites.net/odata");
-
-                //var res = await client
-                //    .For<Year>()
-                //    .FindEntriesAsync();
-
-                //success?.Invoke(res);
-
                 RestClient svc = new RestClient("http://api-ghosts.azurewebsites.net/");
                 svc.IgnoreResponseStatusCode = true;
                 RestRequest req = new RestRequest("odata/Years", Method.GET);
                 var res = await svc.Execute<ODataList<Year>>(req);
                 if (res.StatusCode == System.Net.HttpStatusCode.OK)
                 {
-                    //Poco.User user = res.Data.Content;
-                    success?.Invoke(res.Data);
+                    success?.Invoke(res.Data.Value.ToArray());
                 }
                 else
                 {
-                    fail?.Invoke(res.StatusDescription);
+                    error?.Invoke(res.StatusDescription);
                 }
 
             }
             catch (Exception ex)
             {
-                exception?.Invoke(ex);
+                error?.Invoke("Internal error :(");
+            }
+            finally
+            {
+                finished?.Invoke();
+            }
+        }
+
+        public static async Task GetTournaments(Year year, Action<Tournament[]> success, Action<string> error, Action finished)
+        {
+            try
+            {
+                RestClient svc = new RestClient("http://api-ghosts.azurewebsites.net/");
+                svc.IgnoreResponseStatusCode = true;
+                RestRequest req = new RestRequest("odata/Years(" + year.YearID +  ")/Tournaments", Method.GET);
+                var res = await svc.Execute<ODataList<Tournament>>(req);
+                if (res.StatusCode == System.Net.HttpStatusCode.OK)
+                {
+                    List<Tournament> tournaments = res.Data.Value;
+                    success?.Invoke(tournaments.ToArray());
+                }
+                else
+                {
+                    error?.Invoke(res.StatusDescription);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                error?.Invoke("Internal error :(");
+            }
+            finally
+            {
+                finished?.Invoke();
+            }
+        }
+
+        public static async Task GetMatches(Tournament tournament, Action<Match[]> success, Action<string> error, Action finished)
+        {
+            try
+            {
+                RestClient svc = new RestClient("http://api-ghosts.azurewebsites.net/");
+                svc.IgnoreResponseStatusCode = true;
+                RestRequest req = new RestRequest("odata/Matches/?$expand=HomeTeam($expand=Club,Category),AwayTeam($expand=Club,Category)&$filter=TournamentID eq " + tournament.TournamentID , Method.GET);
+                var res = await svc.Execute<ODataList<Match>>(req);
+                if (res.StatusCode == System.Net.HttpStatusCode.OK)
+                {
+                    List<Match> matches = res.Data.Value;
+                    success?.Invoke(matches.ToArray());
+                }
+                else
+                {
+                    error?.Invoke(res.StatusDescription);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                error?.Invoke("Internal error :(");
+            }
+            finally
+            {
+                finished?.Invoke();
+            }
+        }
+
+        public static async Task GetMatch(int matchId, Action<Match> success, Action<string> error, Action finished)
+        {
+            try
+            {
+                RestClient svc = new RestClient("http://api-ghosts.azurewebsites.net/");
+                svc.IgnoreResponseStatusCode = true;
+                RestRequest req = new RestRequest("odata/Matches(" + matchId + ")/?$expand=HomeTeam($expand=Club,Category),AwayTeam($expand=Club,Category),Tournament($expand=Category,Year)", Method.GET);
+                var res = await svc.Execute<Match>(req);
+                if (res.StatusCode == System.Net.HttpStatusCode.OK)
+                {
+                    success?.Invoke(res.Data);
+                }
+                else
+                {
+                    error?.Invoke(res.StatusDescription);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                error?.Invoke("Internal error :(");
+            }
+            finally
+            {
+                finished?.Invoke();
             }
         }
 

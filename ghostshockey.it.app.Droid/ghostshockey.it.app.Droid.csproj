@@ -149,12 +149,13 @@
     <Compile Include="UI\Activities\MainActivity.cs" />
     <Compile Include="UI\Activities\SplashActivity.cs" />
     <Compile Include="UI\Fragments\%40Fragment.cs" />
-    <Compile Include="UI\Fragments\AgendaFragment.cs" />
+    <Compile Include="UI\Fragments\MatchesFragment.cs" />
+    <Compile Include="UI\Fragments\MatchFragment.cs" />
+    <Compile Include="UI\Fragments\TournamentsFragment.cs" />
     <Compile Include="UI\Fragments\LoginFragment.cs" />
     <Compile Include="UI\Fragments\Registration0Fragment.cs" />
     <Compile Include="UI\Fragments\Registration1Fragment.cs" />
     <Compile Include="UI\Fragments\RegistrationDoneFragment.cs" />
-    <Compile Include="UI\Fragments\TaskFragment.cs" />
     <Compile Include="UI\Fragments\TextInputFragment.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -166,21 +167,21 @@
     <AndroidResource Include="Resources\layout\FragmentTextInput.axml" />
     <AndroidResource Include="Resources\layout\ActivityMain.axml" />
     <AndroidResource Include="Resources\layout\ActivitySplash.axml" />
-    <AndroidResource Include="Resources\layout\CellTask.axml" />
-    <AndroidResource Include="Resources\layout\FragmentAgenda.axml" />
+    <AndroidResource Include="Resources\layout\CellText.axml" />
+    <AndroidResource Include="Resources\layout\FragmentTournaments.axml" />
     <AndroidResource Include="Resources\layout\FragmentLogin.axml" />
     <AndroidResource Include="Resources\layout\FragmentRegistration0.axml" />
     <AndroidResource Include="Resources\layout\FragmentRegistration1.axml" />
     <AndroidResource Include="Resources\layout\FragmentRegistrationDone.axml" />
     <AndroidResource Include="Resources\layout\FragmentTask.axml" />
+    <AndroidResource Include="Resources\layout\FragmentMatches.axml" />
+    <AndroidResource Include="Resources\layout\CellYear.axml" />
+    <AndroidResource Include="Resources\layout\CellTournament.axml" />
+    <AndroidResource Include="Resources\layout\CellMatch.axml" />
+    <AndroidResource Include="Resources\layout\FragmentMatch.axml" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\values\Strings.xml" />
-    <AndroidResource Include="Resources\drawable-hdpi\Icon.png" />
-    <AndroidResource Include="Resources\drawable-mdpi\Icon.png" />
-    <AndroidResource Include="Resources\drawable-xhdpi\Icon.png" />
-    <AndroidResource Include="Resources\drawable-xxhdpi\Icon.png" />
-    <AndroidResource Include="Resources\drawable-xxxhdpi\Icon.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\values\Styles.xml" />
@@ -232,6 +233,12 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable-xhdpi\image_check_empty_orange.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\drawable-hdpi\" />
+    <Folder Include="Resources\drawable-mdpi\" />
+    <Folder Include="Resources\drawable-xxhdpi\" />
+    <Folder Include="Resources\drawable-xxxhdpi\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
   <Import Project="..\packages\Xamarin.Android.Support.Vector.Drawable.23.4.0.1\build\Xamarin.Android.Support.Vector.Drawable.targets" Condition="Exists('..\packages\Xamarin.Android.Support.Vector.Drawable.23.4.0.1\build\Xamarin.Android.Support.Vector.Drawable.targets')" />

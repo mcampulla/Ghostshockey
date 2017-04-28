@@ -87,6 +87,16 @@
             dataField: "DateEnd",
             width: 120,
             validationRules: [{ type: "required" }]
+        }, {
+            dataField: "Matches",
+            width: 70,
+            allowFiltering: false,
+            allowSorting: false,
+            cellTemplate: function (container, options) {
+                $("<div>", { "class": "link-container" })
+                    .append($("<a>", { "href": "/TournamentDetail/" + options.data.TournamentID}).html("Detail"))
+                    .appendTo(container);
+            }
         }]
     }
 

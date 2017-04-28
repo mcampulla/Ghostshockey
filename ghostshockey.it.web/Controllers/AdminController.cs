@@ -50,6 +50,21 @@ namespace ghostshockey.it.web.Controllers
             return View();
         }
 
+        [HttpGet]
+        public ActionResult TournamentDetail(int id)
+        {
+            ViewBag.NgApp = "Tournaments";
+
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult TournamentDetail(bool isPost = true)
+        {
+            ViewBag.NgApp = "Tournaments";
+            return View();
+        }
+
         public ActionResult Players()
         {
             ViewBag.NgApp = "Players";
